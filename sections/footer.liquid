@@ -1,0 +1,297 @@
+<footer>
+  <div class="footer-kv">
+    <picture>
+      <source
+        srcset="{{ 'footer-kv.webp' | file_url }}"
+        type="image/webp"
+        media="(min-width: 768px)"
+        class="lazyload"
+      >
+      <source srcset="{{ 'footer-kv-sp.webp' | file_url }}" type="image/webp" class="lazyload">
+      <source
+        srcset="{{ 'footer-kv.jpg' | file_url }}"
+        type="image/jpg"
+        class="lazyload"
+        media="(min-width: 768px)"
+        class="lazyload"
+      >
+      <img
+        src="{{ 'footer-kv-sp.jpg' | file_url }}"
+        type="image/jpg"
+        alt=""
+        class="wow animate__animated animate__zoomIn2 animate__delay-half lazyload"
+        class="lazyload"
+      >
+    </picture>
+  </div>
+  <div class="footer-menu-bar">
+    <div class="{% unless request.path contains '/en' %}goods {% endunless %}ls footer-menu-bar-item text-center for-pc">
+      {% if request.path contains '/en' %}
+      <a href="https://awichmerch.com" target="_blank">
+        <p><span class="en" style="margin-inline: 0;">OFFICIAL GOODS</span></p>
+      </a>
+      {%  else %}
+      <a href="https://awichmerch.com" target="_blank">
+        <p><span class="en">OFFICIAL GOODS</span>{{ section.settings.footer_goods_pc }}</p>
+      </a>
+      {% endif %}
+    </div>
+    <div class="goods ls footer-menu-bar-item text-center for-sp">
+      {% if request.path contains '/en' %}
+      <a href="https://awichmerch.com" target="_blank">
+        <p>
+         <span class="en" style="margin-inline: 0;">OFFICIAL GOODS</span>
+        </p>
+      </a>
+      {%  else %}
+      <a href="https://awichmerch.com" target="_blank">
+        <p>
+          {{ section.settings.footer_goods_sp }}<span class="en">OFFICIAL GOODS</span>
+        </p>
+      </a>
+      {% endif %}
+    </div>
+
+    <div class="modal_btn pp footer-menu-bar-item text-center" data-target="modal-01">
+      {% if request.path contains '/en' %}
+             <p><span class="en" style="margin-inline: 0;">PRIVACY POLICY</span></p>
+      {%  else %}
+             <p>{{ section.settings.footer_privacy_text }}<span class="en">PRIVACY POLICY</span></p>
+      {% endif %}
+    </div>
+    <div class="modal_btn ls footer-menu-bar-item text-center" data-target="modal-02">
+      {% if request.path contains '/en' %}
+        <p><span class="en" style="margin-inline: 0;">LEGAL STATEMENT</span></p>
+      {%  else %}
+        <p><span class="en">LEGAL STATEMENT</span>{{ section.settings.footer_regal }}</p>
+      {% endif %}
+
+    </div>
+    <div class="{% unless request.path contains '/en' %}company {% endunless %}footer-menu-bar-item text-center">
+      {% assign path = request.path | split: '?' | first %}
+      {% assign pathhash = request.path | split: '#' | first %}
+　　　{% if path == '/en' %}
+      <a href="#info" style="display: inline-block;">
+        <p><span class="en" style="margin-inline: 0;">COMPANY</span></p>
+      </a>
+      {% elsif pathhash == '/en' %}
+      <a href="#info" style="display: inline-block;">
+        <p><span class="en" style="margin-inline: 0;">COMPANY</span></p>
+      </a>
+      {% elsif request.path contains '/en' %}
+          <a href="{{shop.url}}/en#info" style="display: inline-block;">
+        <p><span class="en" style="margin-inline: 0;">COMPANY</span></p>
+      </a>
+      {% elsif template == 'index' %}
+      <a href="#info" style="display: inline-block;">
+        <p><span class="en">COMPANY</span>{{ section.settings.footer_privacy_company }}</p>
+      </a>
+     {% else %}
+      <a href="{{shop.url}}#info" style="display: inline-block;">
+        <p><span class="en">COMPANY</span>{{ section.settings.footer_privacy_company }}</p>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+
+<div class="footer-main">
+    <div class="footer-container d-flex justify-content-between align-items-end">
+      <div class="left-content">
+        {% assign path = request.path | split: '?' | first %}
+        {% assign pathhash = request.path | split: '#' | first %}
+　　　　{% if path == '/en' %}
+        <ul>
+          <li><a href="#">{{ section.settings.footer_list1 }}</a></li>
+          <li><a href="/en/collections/all">{{ section.settings.footer_list2 }}</a></li>
+          <li><a href="#story-main">{{ section.settings.footer_list3 }}</a></li>
+          <li><a href="/en/pages/process">{{ section.settings.footer_list4 }}</a></li>
+          <li><a href="/en/pages/recipe">{{ section.settings.footer_list5 }}</a></li>
+          <li><a href="#sns">{{ section.settings.footer_list6 }}</a></li>
+          <li><a href="#info">{{ section.settings.footer_list8 }}</a></li>
+        </ul>
+        {% elsif pathhash == '/en' %}
+        <ul>
+          <li><a href="#">{{ section.settings.footer_list1 }}</a></li>
+          <li><a href="/en/collections/all">{{ section.settings.footer_list2 }}</a></li>
+          <li><a href="#story-main">{{ section.settings.footer_list3 }}</a></li>
+          <li><a href="/en/pages/process">{{ section.settings.footer_list4 }}</a></li>
+          <li><a href="/en/pages/recipe">{{ section.settings.footer_list5 }}</a></li>
+          <li><a href="#sns">{{ section.settings.footer_list6 }}</a></li>
+          <li><a href="#info">{{ section.settings.footer_list8 }}</a></li>
+        </ul>
+        {% elsif template == 'index' %}
+        <ul>
+          <li><a href="{% if request.path contains '/en' %}/en{% endif %}/">{{ section.settings.footer_list1 }}</a></li>
+          <li><a href="{% if request.path contains '/en' %}/en{% endif %}/collections/all">{{ section.settings.footer_list2 }}</a></li>
+          <li><a href="{% if request.path contains '/en' %}/en{% endif %}#story-main">{{ section.settings.footer_list3 }}</a></li>
+          <li><a href="{% if request.path contains '/en' %}/en{% endif %}/pages/process">{{ section.settings.footer_list4 }}</a></li>
+          <li><a href="{% if request.path contains '/en' %}/en{% endif %}/pages/recipe">{{ section.settings.footer_list5 }}</a></li>
+          <li><a href="{% if request.path contains '/en' %}/en{% endif %}#sns">{{ section.settings.footer_list6 }}</a></li>
+          {% if request.path contains '/en' %}{% else %}<li><a href="/blogs/topic">{{ section.settings.footer_list7 }}</a></li>{% endif %}
+          <li><a href="{% if request.path contains '/en' %}/en{% endif %}#info">{{ section.settings.footer_list8 }}</a></li>
+        </ul>
+        {% else %}
+        <ul>
+          <li><a href="{% if request.path contains '/en' %}/en{% endif %}/">{{ section.settings.footer_list1 }}</a></li>
+          <li><a href="{% if request.path contains '/en' %}/en{% endif %}/collections/all">{{ section.settings.footer_list2 }}</a></li>
+          <li><a href="{{ shop.url }}{% if request.path contains '/en' %}/en{% endif %}#story-main">{{ section.settings.footer_list3 }}</a></li>
+          <li><a href="{% if request.path contains '/en' %}/en{% endif %}/pages/process">{{ section.settings.footer_list4 }}</a></li>
+          <li><a href="{% if request.path contains '/en' %}/en{% endif %}/pages/recipe">{{ section.settings.footer_list5 }}</a></li>
+          <li><a href="{{ shop.url }}{% if request.path contains '/en' %}/en{% endif %}#sns">{{ section.settings.footer_list6 }}</a></li>
+          {% if request.path contains '/en' %}{% else %}<li><a href="/blogs/topic">{{ section.settings.footer_list7 }}</a></li>{% endif %}
+          <li><a href="{% if request.path contains '/en' %}/en{% endif %}#info">{{ section.settings.footer_list8 }}</a></li>
+        </ul>
+        {% endif %}
+        <div class="symbol">
+          <a href="{% if request.path contains '/en' %}/en{% endif %}/">
+            <img src="{{ 'symbol.png' | file_url }}" alt="habush" width="53">
+          </a>
+        </div>
+        <div id="info">
+          <p>
+            {{ section.settings.footer_address }}
+          </p>
+          <p class="contact-mail">{{ section.settings.footer_contact }}<br><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#104;&#97;&#98;&#117;&#115;&#104;&#46;&#106;&#112;">&#105;&#110;&#102;&#111;&#64;&#104;&#97;&#98;&#117;&#115;&#104;&#46;&#106;&#112;</a></p>
+        </div>
+        <div class="logo">
+          <img src="{{ 'logo_n.png' | file_url }}" alt="HABUSH" width="179">
+        </div>
+      </div>
+      <div class="right-content">
+        <p class="sns-icons">
+          <a href="https://www.instagram.com/habush.jp/" target="_blank" rel="noopener noreferrer" class="ig-icon">
+            <img src="{{ 'ig-icon.svg' | file_url }}" alt="" width="25">
+          </a>
+          <a href="https://twitter.com/habush_jp" target="_blank" rel="noopener noreferrer" class="twitter-icon">
+            <img src="{{ 'twitter-icon.svg' | file_url }}" alt="" width="23">
+          </a>
+          <a
+            href="https://www.tiktok.com/@habush.jp?_t=8WzUnbnRayI&_r=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="tiktok-icon"
+          >
+            <img src="{{ 'tiktok-icon.svg' | file_url }}" alt="" width="18">
+          </a>
+        </p>
+        <p class="copy en for-pc">{{ section.settings.footer_copyright }}</p>
+      </div>
+    </div>
+    <p class="copy en for-sp">{{ section.settings.footer_copyright }}</p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "フッター",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "フッター"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_goods_pc",
+      "label": "Awichオフィシャルグッズ",
+      "default": "Awichオフィシャルグッズ"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_goods_sp",
+      "label": "Awichオフィシャルグッズ",
+      "default": "Awich<br class='en-none'>オフィシャルグッズ"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_privacy_text",
+      "label": "プライバシーポリシー",
+      "default": "プライバシーポリシー"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_regal",
+      "label": "特定商取引法",
+      "default": "<span class='en'>LEGAL STATEMENT</span>特定商取引法<br class='for-sp'>に基づく表記"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_privacy_company",
+      "label": "会社概要",
+      "default": "会社概要"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_address",
+      "label": "住所",
+      "default": "and okinawa株式会社<br>沖縄県那覇市識名1106-2"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_contact",
+      "label": "お問い合わせ",
+      "default": "お問い合わせはこちら"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_copyright",
+      "label": "コピーライト",
+      "default": "Copyright HABUSH. All Right Reserved."
+    },
+    {
+      "type": "textarea",
+      "id": "footer_list1",
+      "label": "TOP",
+      "default": "TOP"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_list2",
+      "label": "PRODUCT",
+      "default": "PRODUCT"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_list3",
+      "label": "BRAND STORY",
+      "default": "BRAND STORY"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_list4",
+      "label": "PROCESS",
+      "default": "PROCESS"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_list5",
+      "label": "RECIPE",
+      "default": "RECIPE"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_list6",
+      "label": "SNS",
+      "default": "SNS"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_list7",
+      "label": "TOPICS",
+      "default": "TOPICS"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_list8",
+      "label": "CONTACT",
+      "default": "CONTACT"
+    },
+  ],
+  "presets": [
+    {
+      "name": "フッター",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

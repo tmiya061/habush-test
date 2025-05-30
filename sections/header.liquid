@@ -1,0 +1,205 @@
+{% if template == 'index' %}
+<div id="opening-wrapper">
+  <p class="animate__animated animate__zoomIn2">
+    <img src="{{ 'logo_n.png' | file_url }}?1" alt="HABUSH" width="192">
+  </p>
+</div>
+{% endif %}
+<header class="{% if template == 'page.recipe' %}preload-main{% endif %} {% if template == 'page.process' %}preload-main{% endif %}">
+  <div class="header-container d-flex">
+    {% if request.path contains '/en' %}
+    <a href="/en" class="symbol animate__animated animate__fadeIn animate__delay-1s">
+      <picture>
+        <source srcset="{{ 'symbol.webp' | file_url }}" type="image/webp">
+        <img src="{{ 'symbol.png' | file_url }}?1" alt="" width="70">
+      </picture>
+    </a>
+    {% else %}
+    <a href="/" class="symbol animate__animated animate__fadeIn animate__delay-1s">
+      <picture>
+        <source srcset="{{ 'symbol.webp' | file_url }}" type="image/webp">
+        <img src="{{ 'symbol.png' | file_url }}?1" alt="" width="70">
+      </picture>
+    </a>
+    {% endif %}
+    <div class="header-text-wrap animate__animated animate__fadeIn animate__delay-1s">
+      <div class="header-text">
+        <p class="en">{{ section.settings.header_menu_side_text1 }}</p>
+      </div>
+      <div class="header-text">
+        <p class="en">
+          {{ section.settings.header_menu_side_text2 }}
+        </p>
+      </div>
+
+    </div>
+    <div class="sns-icons animate__animated animate__fadeIn animate__delay-1s">
+      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+        <img src="{{ 'cart-icon.svg' | file_url }}" alt="カート" width="25">
+        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+        {%- if cart != empty -%}
+          <div class="cart-count-bubble">
+            {%- if cart.item_count < 100 -%}
+              <span aria-hidden="true">{{ cart.item_count }}</span>
+            {%- endif -%}
+            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+          </div>
+        {%- endif -%}
+      </a>
+    </div>
+    <div class="menu animate__animated animate__fadeIn animate__delay-1s">
+      <span id="nav_toggle">
+        <i></i>
+        <i></i>
+        <img src="{{ 'menu.svg' | file_url }}" alt="MENU" width="48">
+      </span>
+      <nav class="g-nav">
+        {% assign path = request.path | split: '?' | first %}
+        {% assign pathhash = request.path | split: '#' | first %}
+　　　　{% if path == '/en' %}
+          <!-- 英語トップ -->
+          <ul>
+            <li><a href="/">{{ section.settings.header_list1 }}</a></li>
+            <li><a href="/en/collections/all">{{ section.settings.header_list2 }}</a></li>
+            <li><a href="#story-main">{{ section.settings.header_list3 }}</a></li>
+            <li><a href="/en/pages/process">{{ section.settings.header_list4 }}</a></li>
+            <li><a href="/en/pages/recipe">{{ section.settings.header_list5 }}</a></li>
+            <li><a href="#sns">{{ section.settings.header_list6 }}</a></li>
+            <li><a href="#info">{{ section.settings.header_list8 }}</a></li>
+        </ul>
+        {% elsif pathhash == '/en' %}
+          <ul>
+            <li><a href="/">{{ section.settings.header_list1 }}</a></li>
+            <li><a href="/en/collections/all">{{ section.settings.header_list2 }}</a></li>
+            <li><a href="#story-main">{{ section.settings.header_list3 }}</a></li>
+            <li><a href="/en/pages/process">{{ section.settings.header_list4 }}</a></li>
+            <li><a href="/en/pages/recipe">{{ section.settings.header_list5 }}</a></li>
+            <li><a href="#sns">{{ section.settings.header_list6 }}</a></li>
+            <li><a href="#info">{{ section.settings.header_list8 }}</a></li>
+        </ul>
+        {% elsif template == 'index' %}
+          <!-- 日本語トップ -->
+          <ul>
+            <li><a href="/">{{ section.settings.header_list1 }}</a></li>
+            <li><a href="/collections/all">{{ section.settings.header_list2 }}</a></li>
+            <li><a href="#story-main">{{ section.settings.header_list3 }}</a></li>
+            <li><a href="/pages/process">{{ section.settings.header_list4 }}</a></li>
+            <li><a href="/pages/recipe">{{ section.settings.header_list5 }}</a></li>
+            <li><a href="#sns">{{ section.settings.header_list6 }}</a></li>
+            <li><a href="/blogs/topic">{{ section.settings.header_list7 }}</a></li>
+            <li><a href="#info">{{ section.settings.header_list8 }}</a></li>
+          </ul>
+        {% elsif request.path contains '/en' %}
+          <!-- 英語下層 -->
+          <ul>
+            <li><a href="/en">{{ section.settings.header_list1 }}</a></li>
+            <li><a href="/en/collections/all">{{ section.settings.header_list2 }}</a></li>
+            <li><a href="/en#story-main">{{ section.settings.header_list3 }}</a></li>
+            <li><a href="/en/pages/process">{{ section.settings.header_list4 }}</a></li>
+            <li><a href="/en/pages/recipe">{{ section.settings.header_list5 }}</a></li>
+            <li><a href="/en#sns">{{ section.settings.header_list6 }}</a></li>
+            <li><a href="/en#info">{{ section.settings.header_list8 }}</a></li>
+          </ul>
+        {% else %}
+          <!-- 日本語下層 -->
+          <ul>
+            <li><a href="{{ shop.url }}">{{ section.settings.header_list1 }}</a></li>
+            <li><a href="/collections/all">{{ section.settings.header_list2 }}</a></li>
+            <li><a href="{{ shop.url }}#story-main">{{ section.settings.header_list3 }}</a></li>
+            <li><a href="/pages/process">{{ section.settings.header_list4 }}</a></li>
+            <li><a href="/pages/recipe">{{ section.settings.header_list5 }}</a></li>
+            <li><a href="{{ shop.url }}#sns">{{ section.settings.header_list6 }}</a></li>
+            <li><a href="/blogs/topic">{{ section.settings.header_list7 }}</a></li>
+            <li><a href="{{ shop.url }}#info">{{ section.settings.header_list8 }}</a></li>
+          </ul>
+        {% endif %}
+      </nav>
+    </div>
+  </div>
+  <span class="nav-open-mask"></span>
+</header>
+
+
+{% schema %}
+{
+  "name": "トップデザイン",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "mv_text",
+      "label": "タイトル"
+    },
+    {
+      "type": "textarea",
+      "id": "header_menu_side_text1",
+      "label": "SPECIALQUALITY",
+      "default": "SPECIALQUALITY"
+    },
+    {
+      "type": "textarea",
+      "id": "header_menu_side_text2",
+      "label": "Awamori",
+      "default": "Awamori<br>Habu extract<br>13 kinds of herbs"
+    },
+    {
+      "type": "header",
+      "content": "ヘッダーリスト"
+    },
+    {
+      "type": "textarea",
+      "id": "header_list1",
+      "label": "TOP",
+      "default": "TOP"
+    },
+    {
+      "type": "textarea",
+      "id": "header_list2",
+      "label": "PRODUCT",
+      "default": "PRODUCT"
+    },
+    {
+      "type": "textarea",
+      "id": "header_list3",
+      "label": "BRAND STORY",
+      "default": "BRAND STORY"
+    },
+    {
+      "type": "textarea",
+      "id": "header_list4",
+      "label": "PROCESS",
+      "default": "PROCESS"
+    },
+    {
+      "type": "textarea",
+      "id": "header_list5",
+      "label": "RECIPE",
+      "default": "RECIPE"
+    },
+    {
+      "type": "textarea",
+      "id": "header_list6",
+      "label": "SNS",
+      "default": "SNS"
+    },
+    {
+      "type": "textarea",
+      "id": "header_list7",
+      "label": "TOPICS",
+      "default": "TOPICS"
+    },
+    {
+      "type": "textarea",
+      "id": "header_list8",
+      "label": "CONTACT",
+      "default": "CONTACT"
+    },
+  ],
+  "presets": [
+    {
+      "name": "トップデザイン",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

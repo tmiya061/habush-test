@@ -1,0 +1,81 @@
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+{{ 'topics.min.css' | asset_url | stylesheet_tag }}
+
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+<main class="preload-main">
+  <section id="kv" class="under__kv c_topic__fv">
+    <div class="kv-inner">
+      <!-- <h1 class="logo animate__animated animate__kvLogoSlideInUp animate__delay-1s wow rellax" data-rellax-speed="1"> -->
+      <h1 class="logo animate__animated">
+        <img src="{{ 'TOPICS.png' | file_url }}" alt="TOPICS" width="270">
+      </h1>
+      <div class="c_topic__wrap">
+        <div class="c_topic__sidebar single">
+          <a href="/blogs/{{ blog.handle }}">ALL</a>
+          {% for tag in blog.all_tags %}
+            <a href="/blogs/{{ blog.handle }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+          {% endfor %}
+        </div>
+        <div class="c_topic__items">
+          <div class="c_topic__item single">
+            <div class="c_topic__item-meta">
+              <time>
+                {{ article.published_at | date: '%Y.%m.%d' }}
+              </time>
+              {% for tag in article.tags limit: 1 %}
+                <p class="c_topNews__item-tag">
+                  {{ tag }}
+                </p>
+              {% endfor %}
+            </div>
+            {% comment %}NEWラベル用{% endcomment %}
+            {%- assign published_date = article.published_at | date: '%s' -%}
+            {%- assign current_date = 'today' | date: '%s' -%}
+            {%- assign passed_days_from_publish = current_date | minus: published_date | divided_by: 86400 -%}
+
+            {%- if passed_days_from_publish <= 7 -%}
+                <span class="c_new_label">NEW</span>
+            {%- endif -%}
+
+            <h2 class="c_topic__single-title">
+              {{ article.title }}
+            </h2>
+            {% if article.image %}
+              <div class="c_topic__single-img">
+                <img src="{{ article.image | image_url }}" alt="TOPICS" width="270">
+              </div>
+            {% endif %}
+            
+            <div class="c_topic__single-content">
+              {{ article.content }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="c_topic__single-archive-link">
+        <a href="/blogs/topic">
+          <span>BACK TO INDEX</span>
+          <img class="arrow" src="{{ 'arrow-up.png' | file_url }}" alt="上矢印" width="16">
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>

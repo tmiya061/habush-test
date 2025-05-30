@@ -1,0 +1,376 @@
+//変更
+$breakpoint: 769px;
+
+$breakpoints: (
+    //キー : 値
+    'sp': "screen and (max-width: 768px)", //スマホサイズ
+    'pc': "(min-width: 769px)", 
+) !default;
+
+@mixin mq($breakpoint: sp) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+@function vw($arg) {
+	@return calc($arg / 390 * 100vw);
+}
+
+
+/*----------------------------------
+    title
+-----------------------------------*/
+
+
+.title--primary {
+    margin-left: auto;
+    text-align: right;
+}
+
+@include mq(sp) {
+    .under__kv .kv-inner .logo {
+        width: 132px;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.c_topic__fv {
+    margin-top: 35vh;
+    margin-bottom: 195px;
+    @include mq(sp) {
+        margin-top: 165px !important;
+        margin-bottom: 140px;
+    }
+}
+
+.c_topic__wrap {
+    width: 100%;
+    max-width: 1180px;
+    padding: 0 40px;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    column-gap: 40px;
+    padding-top: 30px;
+    flex-direction: row-reverse;
+    @include mq(sp) {
+        display: block;
+        padding: 0 20px;
+        padding-top: 100px;
+    }
+}
+
+.c_topic__sidebar {
+    width: 100px;
+    height: auto;
+    position: sticky;
+    top: 40px;
+    right: 0;
+    font-family: var(--en-font-family);
+    a {
+        display: inline-block;
+        font-size: 18px;
+        line-height: calc(32 / 18);
+        margin-bottom: 5px;
+        padding: 1px 8px 1px 4px;
+        line-height: 1.5;
+        &:hover {
+            opacity: 0.7;
+        }
+        &.current {
+            background: #fff;
+            color: #000;
+            pointer-events: none;
+        }
+    }
+    @include mq(sp) {
+        width: 240px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 10px;
+        font-size: 16px;
+        line-height: calc(32 / 16);
+        margin-bottom: 50px;
+        &.single {
+            display: none;
+        }
+    }
+}
+
+.c_topic__items {
+    width: 81.8181%;
+    @include mq(sp) {
+        width: 100%;
+    }
+}
+
+.c_topic__item {
+    padding: 35px 0;
+    display: block;
+    border-bottom: 1px solid #fff;
+    &:first-of-type {
+        border-top: 1px solid #fff;
+    }
+    &:last-of-type {
+        &.single {
+            border-bottom: none;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    @include mq(sp) {
+        padding: 20px 0;
+    }
+}
+
+.c_topic__item-meta {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-bottom: 10px;
+    @include mq(sp) {
+        margin-bottom: 13px;
+    }
+
+    time {
+        font-size: 12px;
+        color: #ababab;
+        line-height: calc(22 / 12);
+    }
+    p {
+        font-size: 12px;
+        color: #ababab;
+        line-height: calc(22 / 12);
+    }
+}
+
+.c_topNews__item-title {
+    @include mq(pc) {
+        display: flex;
+        align-items: flex-start;        
+    }
+    font-size: 16px;
+    line-height: calc(24 / 16);
+    letter-spacing: 0.04em;
+    .text {
+        display: inline-block;
+        position: relative;
+        .arrow {
+            display: inline-block;
+            margin-left: 10px;
+            margin-bottom: 2px;
+            width: 13px;
+            height: 13px;
+        }
+    }
+    .c_new_label {
+        @include mq(pc) {
+            margin-top: -1px;
+        }
+    }
+    @include mq(sp) {
+        font-size: 13px;
+        line-height: calc(23 / 13);
+        .text {
+            display: block;
+            width: 90%;
+            position: relative;
+            .arrow {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: calc(100% + 4px);
+                width: 11px;
+                height: 11px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+/*----------------------------------
+    pagination
+-----------------------------------*/
+
+.pagination-wrapper {
+    margin-top: 11rem !important;
+    @include mq(sp) {
+        margin-top: 7rem !important;
+    }
+}
+
+.pagination__list {
+    justify-content: start !important;
+    position: relative;
+    @include mq(sp) {
+        width: 100%;
+        justify-content: center !important;
+        position: relative;
+        .c_prev {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .c_next {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    .pagination__item {
+        border: none;
+        color: #fff;
+        &.pagination__item-arrow {
+            border: none;
+        }
+        &.pagination__item--current {
+            color: #fff;
+            opacity: 1 !important;
+            border: 1px solid #fff;
+        }
+        &::after {
+            display: none;
+        }
+        font-size: 15px;
+        @include mq(sp) {
+            font-size: 14px;
+        }
+        @media(hover: hover) {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/*----------------------------------
+    single
+-----------------------------------*/
+
+.c_topic__single-title {
+    font-size: 24px;
+    line-height: calc(38 / 24);
+    margin-bottom: 65px;
+    margin-top: 30px;
+    font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI";
+    @include mq(sp) {
+        font-size: 18px;
+        line-height: calc(28 / 18);
+        margin-bottom: 40px;
+    }
+}
+
+.c_new_label {
+    padding: 3px 5px;
+    background: #ec6941;
+    font-size: 12px;
+    line-height: 1.5;
+    display: inline-block;
+    margin-right: 15px;
+    @include mq(sp) {
+        display: block;
+        width: fit-content;
+        margin-bottom: 10px;
+        font-size: 10px;
+        padding: 2px 4px;
+    }
+}
+
+.c_topic__single-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 85px;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    @include mq(sp) {
+        margin-bottom: 70px;
+    }
+}
+
+
+.c_topic__single-content {
+    p {
+        font-size: 16px;
+        line-height: calc(28 / 16);
+        @include mq(sp) {
+            font-size: 13px;
+            line-height: calc(33 / 13);
+        }
+    }
+    p + p {
+        margin-top: 28px;
+        @include mq(sp) {
+            margin-top: 33px;
+        }
+    }
+    .img2 {
+        margin-top: 110px;
+        padding: 80px 0 80px;
+        column-gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        p + p {
+            margin-top: 0;
+        }
+        @include mq(sp) {
+            margin-top: 50px;
+            padding: 45px 0 45px;
+        }
+    }
+    p {
+        a {
+            position: relative;
+            display: block;
+            width: fit-content;
+            text-decoration: underline;
+        }
+    }
+}
+
+.c_topic__single-archive-link {
+    width: 100%;
+    max-width: 1180px;
+    padding: 0 40px;
+    margin: auto;
+    margin-top: 40px;
+    a {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        font-size: 16px;
+        line-height: 1;
+    }
+    .arrow {
+        width: 12px;
+        height: 12px;
+    }
+    @include mq(sp) {
+        padding: 0 20px;
+        margin-top: 15px;
+        a {
+            font-size: 14px;
+            column-gap: 20px;
+        }
+        .arrow {
+            width: 10px;
+            height: 10px;
+        }
+    }
+}
+

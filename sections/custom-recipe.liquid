@@ -1,0 +1,386 @@
+<main class="preload-main">
+  <section id="kv" class="under__kv recipe">
+    <div class="kv-inner">
+      <h1 class="underRecipe__logo rellax" data-rellax-speed="1">
+        <picture>
+          <img src="{{ 'recipe_title.png' | file_url }}" alt="recipe" width="260" height="115">
+        </picture>
+      </h1>
+      <div class="animate__animated animate__slideInUp animate__delay-1s wow">
+        <div class="underRecipe__swiper-container">
+          <div class="underRecipe__swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" data-slide="0">
+                <div class="title-wrap">
+                  <img
+                    class="text1"
+                    src="{{ 'text_habucoffee.svg' | file_url }}"
+                    alt="HABU COFFEE"
+                    width="190"
+                    height="45"
+                  >
+                  <p class="title-en">&plus;{{ section.settings.recipe_coffee }}</p>
+                </div>
+                <picture class="picture">
+                  <img src="{{ 'recipe-main1.png' | file_url }}" alt="ブラックコーヒーの画像" width="550" height="840">
+                </picture>
+              </div>
+              <div class="swiper-slide" data-slide="1">
+                <div class="title-wrap">
+                  <img class="text2" src="{{ 'text_habucoke.svg' | file_url }}" alt="HABU COKE" width="325" height="75">
+                  <p class="title-en">&plus;{{ section.settings.recipe_cora }}</p>
+                </div>
+                <picture class="picture">
+                  <img src="{{ 'recipe-main2.png' | file_url }}" alt="コーラの画像" width="550" height="840">
+                </picture>
+              </div>
+              <div class="swiper-slide" data-slide="2">
+                <div class="title-wrap">
+                  <img
+                    class="text3"
+                    src="{{ 'text_habutonic.svg' | file_url }}"
+                    alt="HABU TONIC"
+                    width="325"
+                    height="75"
+                  >
+                  <p class="title-en">&plus;{{ section.settings.recipe_water }}</p>
+                </div>
+                <picture class="picture">
+                  <img
+                    src="{{ 'recipe-main3.png' | file_url }}"
+                    alt="トニックウォーターの画像"
+                    width="550"
+                    height="840"
+                  >
+                </picture>
+              </div>
+              <div class="swiper-slide" data-slide="3">
+                <div class="title-wrap">
+                  <img
+                    class="text4"
+                    src="{{ 'text_habuenegy.svg' | file_url }}"
+                    alt="HABU ENERGY"
+                    width="325"
+                    height="75"
+                  >
+                  <p class="title-en">&plus;{{ section.settings.recipe_energy }}</p>
+                </div>
+                <picture class="picture">
+                  <img src="{{ 'recipe-main4.png' | file_url }}" alt="エナジードリンクの画像" width="550" height="840">
+                </picture>
+              </div>
+              <div class="swiper-slide" data-slide="4">
+                <div class="title-wrap">
+                  <img
+                    class="text5"
+                    src="{{ 'text_habusanpin.svg' | file_url }}"
+                    alt="HABU SANPIN"
+                    width="325"
+                    height="75"
+                  >
+                  <p class="title-en">&plus;{{ section.settings.recipe_tea }}</p>
+                </div>
+                <picture class="picture">
+                  <img src="{{ 'recipe-main5.png' | file_url }}" alt="さんぴん茶の画像" width="550" height="840">
+                </picture>
+              </div>
+              <div class="swiper-slide" data-slide="5">
+                <div class="title-wrap">
+                  <img class="text6" src="{{ 'text_habumilk.svg' | file_url }}" alt="HABU MILK" width="325" height="75">
+                  <p class="title-en">&plus;{{ section.settings.recipe_milk }}</p>
+                </div>
+                <picture class="picture">
+                  <img src="{{ 'recipe-main6.png' | file_url }}" alt="牛乳の画像" width="550" height="840">
+                </picture>
+              </div>
+              <div class="swiper-slide" data-slide="6">
+                <div class="title-wrap">
+                  <img
+                    class="text7"
+                    src="{{ 'text_habuyogur.svg' | file_url }}"
+                    alt="HABU YOGUR"
+                    width="325"
+                    height="75"
+                  >
+                  <p class="title-en">&plus;{{ section.settings.yogurt }}</p>
+                </div>
+                <picture class="picture">
+                  <img src="{{ 'recipe-main7.png' | file_url }}" alt="飲むヨーグルトの画像" width="550" height="840">
+                </picture>
+              </div>
+              <div class="swiper-slide" data-slide="7">
+                <div class="title-wrap">
+                  <img class="text8" src="{{ 'text_habudog.svg' | file_url }}" alt="HAB DOG" width="325" height="75">
+                  <p class="title-en">&plus;{{ section.settings.grapefruit }}</p>
+                </div>
+                <picture class="picture">
+                  <img src="{{ 'recipe-main8.png' | file_url }}" alt="グレープフルーツの画像" width="550" height="840">
+                </picture>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <ul class="underRecipe__swiper-prev-wrap">
+            <li class="underRecipe__swiper-prev is-active" data-slide="1">
+              <img src="{{ 'recipe-main1.png' | file_url }}" alt="ブラックコーヒーの画像" width="95" height="95">
+            </li>
+            <li class="underRecipe__swiper-prev" data-slide="2">
+              <img src="{{ 'recipe-main2.png' | file_url }}" alt="ブラックコーヒーの画像" width="95" height="95">
+            </li>
+            <li class="underRecipe__swiper-prev" data-slide="3">
+              <img src="{{ 'recipe-main3.png' | file_url }}" alt="トニックウォーターの画像" width="95" height="95">
+            </li>
+            <li class="underRecipe__swiper-prev" data-slide="4">
+              <img src="{{ 'recipe-main4.png' | file_url }}" alt="エナジードリンクの画像" width="95" height="95">
+            </li>
+            <li class="underRecipe__swiper-prev" data-slide="5">
+              <img src="{{ 'recipe-main5.png' | file_url }}" alt="さんぴん茶の画像" width="95" height="95">
+            </li>
+            <li class="underRecipe__swiper-prev" data-slide="6">
+              <img src="{{ 'recipe-main6.png' | file_url }}" alt="牛乳の画像" width="95" height="95">
+            </li>
+            <li class="underRecipe__swiper-prev" data-slide="7">
+              <img src="{{ 'recipe-main7.png' | file_url }}" alt="飲むヨーグルトの画像" width="95" height="95">
+            </li>
+            <li class="underRecipe__swiper-prev" data-slide="0">
+              <img src="{{ 'recipe-main8.png' | file_url }}" alt="グレープフルーツの画像" width="95" height="95">
+            </li>
+          </ul>
+          <ul class="underRecipe__swiper-next-wrap">
+            <li class="underRecipe__swiper-next is-active" data-slide="7">
+              <img src="{{ 'recipe-main1.png' | file_url }}" alt="ブラックコーヒーの画像" width="95" height="95">
+            </li>
+            <li class="underRecipe__swiper-next" data-slide="0">
+              <img src="{{ 'recipe-main2.png' | file_url }}" alt="ブラックコーヒーの画像" width="95" height="95">
+            </li>
+            <li class="underRecipe__swiper-next" data-slide="1">
+              <img src="{{ 'recipe-main3.png' | file_url }}" alt="トニックウォーターの画像" width="95" height="95">
+            </li>
+            <li class="underRecipe__swiper-next" data-slide="2">
+              <img src="{{ 'recipe-main4.png' | file_url }}" alt="エナジードリンクの画像" width="95" height="95">
+            </li>
+            <li class="underRecipe__swiper-next" data-slide="3">
+              <img src="{{ 'recipe-main5.png' | file_url }}" alt="さんぴん茶の画像" width="95" height="95">
+            </li>
+            <li class="underRecipe__swiper-next" data-slide="4">
+              <img src="{{ 'recipe-main6.png' | file_url }}" alt="牛乳の画像" width="95" height="95">
+            </li>
+            <li class="underRecipe__swiper-next" data-slide="5">
+              <img src="{{ 'recipe-main7.png' | file_url }}" alt="飲むヨーグルトの画像" width="95" height="95">
+            </li>
+            <li class="underRecipe__swiper-next" data-slide="6">
+              <img src="{{ 'recipe-main8.png' | file_url }}" alt="グレープフルーツの画像" width="95" height="95">
+            </li>
+          </ul>
+
+          <ul class="underRecipe__swiper-bg-wrap">
+            <li class="underRecipe__swiper-bg is-active" data-slide="0">
+              <img src="{{ 'recipe-bg1.png' | file_url }}" alt="ブラックコーヒーの画像" width="1400" height="1070">
+            </li>
+            <li class="underRecipe__swiper-bg" data-slide="1">
+              <img src="{{ 'recipe-bg2.png' | file_url }}" alt="ブラックコーヒーの画像" width="1400" height="1070">
+            </li>
+            <li class="underRecipe__swiper-bg" data-slide="2">
+              <img src="{{ 'recipe-bg3.png' | file_url }}" alt="トニックウォーターの画像" width="1400" height="1070">
+            </li>
+            <li class="underRecipe__swiper-bg" data-slide="3">
+              <img src="{{ 'recipe-bg4.png' | file_url }}" alt="エナジードリンクの画像" width="1400" height="1070">
+            </li>
+            <li class="underRecipe__swiper-bg" data-slide="4">
+              <img src="{{ 'recipe-bg5.png' | file_url }}" alt="さんぴん茶の画像" width="1400" height="1070">
+            </li>
+            <li class="underRecipe__swiper-bg" data-slide="5">
+              <img src="{{ 'recipe-bg6.png' | file_url }}" alt="牛乳の画像" width="1400" height="1070">
+            </li>
+            <li class="underRecipe__swiper-bg" data-slide="6">
+              <img src="{{ 'recipe-bg7.png' | file_url }}" alt="飲むヨーグルトの画像" width="1400" height="1070">
+            </li>
+            <li class="underRecipe__swiper-bg" data-slide="7">
+              <img src="{{ 'recipe-bg8.png' | file_url }}" alt="グレープフルーツの画像" width="1400" height="1070">
+            </li>
+          </ul>
+        </div>
+
+        <ul class="underRecipe__swiper-text-wrap">
+          <li class="underRecipe__swiper-text" data-slide="0">
+            <p>{{ section.settings.recipe_information }}</p>
+            <p>
+              {{ section.settings.recipe_coffee_text }}
+            </p>
+          </li>
+          <li class="underRecipe__swiper-text" data-slide="1">
+            <p>{{ section.settings.recipe_information }}</p>
+            <p>
+              {{ section.settings.recipe_cora_text }}
+            </p>
+          </li>
+          <li class="underRecipe__swiper-text" data-slide="2">
+            <p>{{ section.settings.recipe_information }}</p>
+            <p>
+              {{ section.settings.recipe_water_text }}
+            </p>
+          </li>
+          <li class="underRecipe__swiper-text" data-slide="3">
+            <p>{{ section.settings.recipe_information }}</p>
+            <p>
+              {{ section.settings.recipe_energy_text }}
+            </p>
+          </li>
+          <li class="underRecipe__swiper-text" data-slide="4">
+            <p>{{ section.settings.recipe_information }}</p>
+            <p>
+              {{ section.settings.recipe_tea_text }}
+            </p>
+          </li>
+          <li class="underRecipe__swiper-text" data-slide="5">
+            <p>{{ section.settings.recipe_information }}</p>
+            <p>
+              {{ section.settings.recipe_milk_text }}
+            </p>
+          </li>
+          <li class="underRecipe__swiper-text" data-slide="6">
+            <p>{{ section.settings.recipe_information }}</p>
+            <p>
+              {{ section.settings.recipe_yogurt_text }}
+            </p>
+          </li>
+          <li class="underRecipe__swiper-text" data-slide="7">
+            <p>{{ section.settings.recipe_information }}</p>
+            <p>
+              {{ section.settings.recipe_grapefruit_text }}
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+{% schema %}
+{
+  "name": "トップデザイン",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "mv_text",
+      "label": "タイトル"
+    },
+    {
+      "type": "header",
+      "content": "レシピ 見出し"
+    },
+    {
+      "type": "textarea",
+      "id": "recipe_information",
+      "label": "Recipe - Information",
+      "default": "Recipe - Information"
+    },
+    {
+      "type": "textarea",
+      "id": "recipe_coffee",
+      "label": "ブラックコーヒー",
+      "default": "ブラックコーヒー"
+    },
+    {
+      "type": "textarea",
+      "id": "recipe_coffee_text",
+      "label": "ブラックコーヒー テキスト",
+      "default": "フレーバーコーヒーのような飲みやすさ<br>眠れなくなっての飲み過ぎにはご注意ください<br><br>HABUSH 30ml(目安：お好みでご調整ください）<br>ブラックコーヒーでフルアップ"
+    },
+    {
+      "type": "textarea",
+      "id": "recipe_cora",
+      "label": "コーラ",
+      "default": "コーラ"
+    },
+    {
+      "type": "textarea",
+      "id": "recipe_cora_text",
+      "label": "コーラ テキスト",
+      "default": "飲まなくてもわかる美味しさ<br>ぜひご自宅でお試しください<br><br>HABUSH 30ml(目安：お好みでご調整ください）<br>コーラでフルアップ"
+    },
+    {
+      "type": "textarea",
+      "id": "recipe_water",
+      "label": "トニックウォーター",
+      "default": "トニックウォーター"
+    },
+    {
+      "type": "textarea",
+      "id": "recipe_water_text",
+      "label": "トニックウォーター テキスト",
+      "default": "HABUSH風味は残しつつ、甘くて飲みやすい<br>強いお酒が苦手な方にも◎<br><br>HABUSH 30ml(目安：お好みでご調整ください）<br>トニックウォーターでフルアップ"
+    },
+    {
+      "type": "textarea",
+      "id": "recipe_energy",
+      "label": "エナジードリンク",
+      "default": "エナジードリンク"
+    },
+    {
+      "type": "textarea",
+      "id": "recipe_energy_text",
+      "label": "エナジードリンク テキスト",
+      "default": "夜の定番となりえる飲み方<br>相乗効果でより元気になってしまう、、、かも<br><br>HABUSH 30ml(目安：お好みでご調整ください）<br>エナジードリンクでフルアップ"
+    },
+    {
+      "type": "textarea",
+      "id": "recipe_tea",
+      "label": "さんぴん茶",
+      "default": "さんぴん茶"
+    },
+    {
+      "type": "textarea",
+      "id": "recipe_tea_text",
+      "label": "さんぴん茶 テキスト",
+      "default": "飲み口さわやかに、スッキリとした味わい<br>甘いお酒が苦手な方におすすめ<br><br>HABUSH 30ml(目安：お好みでご調整ください）<br>さんぴん茶(ジャスミン茶)でフルアップ"
+    },
+    {
+      "type": "textarea",
+      "id": "recipe_milk",
+      "label": "牛乳",
+      "default": "牛乳"
+    },
+    {
+      "type": "textarea",
+      "id": "recipe_milk_text",
+      "label": "牛乳 テキスト",
+      "default": "まろやかさの極み<br>やさしい口あたりがやみつきに？<br><br>HABUSH 30ml(目安：お好みでご調整ください）<br>牛乳でフルアップ"
+    },
+    {
+      "type": "textarea",
+      "id": "recipe_yogurt",
+      "label": "飲むヨーグルト",
+      "default": "飲むヨーグルト"
+    },
+    {
+      "type": "textarea",
+      "id": "recipe_yogurt_text",
+      "label": "飲むヨーグルト テキスト",
+      "default": "酸味と甘さのバランスが絶妙<br>インスタライブでAwichが発見したHABUSHの新しい一面<br><br>HABUSH 30ml(目安：お好みでご調整ください）<br>ヨーグルト飲料でフルアップ"
+    },
+    {
+      "type": "textarea",
+      "id": "recipe_grapefruit",
+      "label": "グレープフルーツ",
+      "default": "グレープフルーツ"
+    },
+    {
+      "type": "textarea",
+      "id": "recipe_grapefruit_text",
+      "label": "グレープフルーツ テキスト",
+      "default": "ソルティドッグをHABUSHでアレンジしたレシピ<br>ハーブの香りがアクセントとなった華やかな味わいをお楽しみください<br><br>HABUSH 30ml(目安：お好みでご調整ください）<br>グレープフルーツジュースでフルアップ<br>※飲み口に塩をつける"
+    }
+  ],
+  "presets": [
+    {
+      "name": "トップデザイン",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
+

@@ -1,0 +1,343 @@
+<main class="preload-main">
+  <section id="kv" class="under__kv">
+    <div class="kv-inner">
+      <h1 class="logo animate__animated animate__kvLogoSlideInUp animate__delay-1s wow rellax" data-rellax-speed="1">
+        <picture>
+          <img src="{{ 'process_title.png' | file_url }}" alt="process" width="348" height="115">
+        </picture>
+      </h1>
+      <div class="kv-list animate__animated animate__slideInUp animate__delay-1s wow">
+        <picture>
+          <img
+            src="{{ 'process_kv-img.png' | file_url }}"
+            alt="お酒の画像"
+            width="1000"
+            height="830"
+            data-swiper-parallax-x="80%"
+            data-swiper-parallax-scale="1"
+          >
+        </picture>
+      </div>
+    </div>
+  </section>
+  <section class="underProcess__kinds">
+    <div class="underProcess__kinds-inner">
+      <div class="underProcess__kinds-title-wrap">
+        <h2 class="underProcess__kinds-title copy rellax" data-rellax-speed="1">{{ section.settings.process_head_title }}</h2>
+      </div>
+      <div class="underProcess__kinds-wrap">
+        <p class="underProcess__kinds-left">{{ section.settings.process_head_head }}</p>
+        <p class="underProcess__kinds-right">
+          {{ section.settings.process_head_text }}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="underProcess__swiper-container first">
+    <div class="underProcess__swiper reverse">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <picture>
+            <img src="{{ 'kukoshi2.png' | file_url }}" alt="桂皮（けいひ）の画像" width="410" height="300" loading="lazy">
+          </picture>
+          <p>{{ section.settings.process_slider1 }}</p>
+        </div>
+        <div class="swiper-slide">
+          <picture>
+            <img src="{{ 'kukoshi.png' | file_url }}" alt="枸杞子の画像" width="410" height="300" loading="lazy">
+          </picture>
+          <p>{{ section.settings.process_slider2 }}</p>
+        </div>
+        <div class="swiper-slide">
+          <picture>
+            <img
+              src="{{ 'kumisukutin.png' | file_url }}"
+              alt="クミスクチンの画像"
+              width="410"
+              height="300"
+              loading="lazy"
+            >
+          </picture>
+          <p>{{ section.settings.process_slider3 }}</p>
+        </div>
+        <div class="swiper-slide">
+          <picture>
+            <img src="{{ 'gokahi.png' | file_url }}" alt="陳皮（チンピ）の画像" width="410" height="300" loading="lazy">
+          </picture>
+          <p>{{ section.settings.process_slider4 }}</p>
+        </div>
+        <div class="swiper-slide">
+          <picture>
+            <img src="{{ 'kashou.png' | file_url }}" alt="花椒の画像" width="410" height="300" loading="lazy">
+          </picture>
+          <p>{{ section.settings.process_slider5 }}</p>
+        </div>
+        <div class="swiper-slide">
+          <picture>
+            <img src="{{ 'gokahi2.png' | file_url }}" alt="五加皮の画像" width="410" height="300" loading="lazy">
+          </picture>
+          <p>{{ section.settings.process_slider6 }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="swiper-container">
+    <div class="underProcess__swiper normal">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <picture>
+            <img src="{{ 'ukyou1.png' | file_url }}" alt="茴香（ういきょう）の画像" width="410" height="300" loading="lazy">
+          </picture>
+          <p>{{ section.settings.process_slider7 }}</p>
+        </div>
+        <div class="swiper-slide">
+          <picture>
+            <img src="{{ 'ukyou2.png' | file_url }}" alt="人参（ニンジン）の画像" width="410" height="300" loading="lazy">
+          </picture>
+          <p>{{ section.settings.process_slider8 }}</p>
+        </div>
+        <div class="swiper-slide">
+          <picture>
+            <img src="{{ 'ukon.png' | file_url }}" alt="竜眼（リュウガン）の画像" width="410" height="300" loading="lazy">
+          </picture>
+          <p>{{ section.settings.process_slider9 }}</p>
+        </div>
+        <div class="swiper-slide">
+          <picture>
+            <img src="{{ 'natume.png' | file_url }}" alt="棗（なつめ）の画像" width="410" height="300" loading="lazy">
+          </picture>
+          <p>{{ section.settings.process_slider10 }}</p>
+        </div>
+        <div class="swiper-slide">
+          <picture>
+            <img src="{{ 'natume2.png' | file_url }}" alt="甘草（かんぞう）の画像" width="410" height="300" loading="lazy">
+          </picture>
+          <p>{{ section.settings.process_slider11 }}</p>
+        </div>
+        <div class="swiper-slide">
+          <picture>
+            <img src="{{ 'ukon2.png' | file_url }}" alt="秋ウコンの画像" width="410" height="300" loading="lazy">
+          </picture>
+          <p>{{ section.settings.process_slider12 }}</p>
+        </div>
+        <div class="swiper-slide">
+          <picture>
+            <img
+              src="{{ 'tyouzi.png' | file_url }}"
+              alt="丁字（ちょうじ）の画像"
+              width="410"
+              height="300"
+              loading="lazy"
+            >
+          </picture>
+          <p>{{ section.settings.process_slider13 }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<style>
+  .underProcess__list-item p {
+    column-gap: 80px;
+  }
+  	@media screen and (max-width: 767px) {
+      .underProcess__list-item p {
+        column-gap: 30px;
+      }
+    }
+</style>
+  <ol class="underProcess__list">
+    <li class="underProcess__list-item">
+      <p>
+        <span>01.</span>
+        {{ section.settings.process_list1 }}
+      </p>
+    </li>
+    <li class="underProcess__list-item">
+      <p>
+        <span>02.</span>
+        {{ section.settings.process_list2 }}
+      </p>
+    </li>
+    <li class="underProcess__list-item">
+      <p>
+        <span>03.</span>
+        {{ section.settings.process_list3 }}
+      </p>
+    </li>
+    <li class="underProcess__list-item">
+      <p>
+        <span>04.</span>
+        {{ section.settings.process_list4 }}
+      </p>
+    </li>
+    <li class="underProcess__list-item">
+      <p>
+        <span>05.</span>
+        {{ section.settings.process_list5 }}
+      </p>
+    </li>
+  </ol>
+</main>
+
+
+
+{% schema %}
+{
+  "name": "トップデザイン",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "mv_text",
+      "label": "タイトル"
+    },
+    {
+      "type": "header",
+      "content": "プロセス 見出し"
+    },
+    {
+      "type": "textarea",
+      "id": "process_head_title",
+      "label": "13 kinds of herbs",
+      "default": "<span>13</span>kinds of herbs."
+    },
+    {
+      "type": "textarea",
+      "id": "process_head_head",
+      "label": "Habush - Materials",
+      "default": "Habush - Materials"
+    },
+    {
+      "type": "textarea",
+      "id": "process_head_text",
+      "label": "Habush Material テキスト",
+      "default": "水だけで100日以上生きるといわれるハブの強靭な生命力を59度のアルコールで抽出。香り高い13種類のハーブエキスと合わせてできるのがHABUSHです。ハーブの香りでハブのクセを柔らかくし、風味豊かに飲みやすいハブ酒が完成しました。<br><br>生きたハブを鮮度がいい状態で特殊処理（放血法、臭腺除去、腸管摘出）。<br>骨肉皮のみをアルコールに浸漬し、無毒化後に旨味成分のエキスを抽出。<br>長期貯蔵熟成し、味にまるみが出たハブエキスを使用。"
+    },
+    {
+      "type": "header",
+      "content": "プロセス スライダー"
+    },
+    {
+      "type": "textarea",
+      "id": "process_slider1",
+      "label": "桂皮（けいひ）",
+      "default": "桂皮（けいひ）"
+    },
+    {
+      "type": "textarea",
+      "id": "process_slider2",
+      "label": "枸杞子（くこし）",
+      "default": "枸杞子（くこし）"
+    },
+    {
+      "type": "textarea",
+      "id": "process_slider3",
+      "label": "クミスクチン",
+      "default": "クミスクチン"
+    },
+    {
+      "type": "textarea",
+      "id": "process_slider4",
+      "label": "陳皮（ちんぴ）",
+      "default": "陳皮（ちんぴ）"
+    },
+    {
+      "type": "textarea",
+      "id": "process_slider5",
+      "label": "花椒（かしょう）",
+      "default": "花椒（かしょう）"
+    },
+    {
+      "type": "textarea",
+      "id": "process_slider6",
+      "label": "五加皮（ごかひ）",
+      "default": "五加皮（ごかひ）"
+    },
+    {
+      "type": "textarea",
+      "id": "process_slider7",
+      "label": "茴香（ういきょう）",
+      "default": "茴香（ういきょう）"
+    },
+    {
+      "type": "textarea",
+      "id": "process_slider8",
+      "label": "人参（にんじん）",
+      "default": "人参（にんじん）"
+    },
+    {
+      "type": "textarea",
+      "id": "process_slider9",
+      "label": "竜眼（りゅうがん）",
+      "default": "竜眼（りゅうがん）"
+    },
+    {
+      "type": "textarea",
+      "id": "process_slider10",
+      "label": "棗（なつめ）",
+      "default": "棗（なつめ）"
+    },
+    {
+      "type": "textarea",
+      "id": "process_slider11",
+      "label": "甘草（かんぞう）",
+      "default": "甘草（かんぞう）"
+    },
+    {
+      "type": "textarea",
+      "id": "process_slider12",
+      "label": "秋ウコン",
+      "default": "秋ウコン"
+    },
+    {
+      "type": "textarea",
+      "id": "process_slider13",
+      "label": "丁字（ちょうじ）",
+      "default": "丁字（ちょうじ）"
+    },
+    {
+      "type": "header",
+      "content": "プロセス リスト"
+    },
+    {
+      "type": "textarea",
+      "id": "process_list1",
+      "label": "01.",
+      "default": "<span>ハブを特殊処理<br class='for-sp'>(完全な血抜き、臭線除去、腸管摘出）</span>"
+    },
+    {
+      "type": "textarea",
+      "id": "process_list2",
+      "label": "02.",
+      "default": "<span>ハブの骨肉皮を59度のアルコールに<br class='for-sp'>浸漬して、旨味成分のエキスを抽出。<br class='for-sp'>3年以上寝かせて熟成。</span>"
+    },
+    {
+      "type": "textarea",
+      "id": "process_list3",
+      "label": "03.",
+      "default": "<span>13種類のハーブを浸漬袋に入れて<br class='for-sp'>泡盛につける。</span>"
+    },
+    {
+      "type": "textarea",
+      "id": "process_list4",
+      "label": "04.",
+      "default": "<span>HABUSH独自のバランスでハブエキスと<br class='for-sp'>ハーブエキスをブレンドし、浸漬タンクで熟成。</span>"
+    },
+    {
+      "type": "textarea",
+      "id": "process_list5",
+      "label": "05.",
+      "default": "<span>瓶に充填、ラベルを貼り出荷。</span>"
+    },
+  ],
+  "presets": [
+    {
+      "name": "トップデザイン",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
+

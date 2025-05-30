@@ -1,0 +1,772 @@
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+<main>
+  <section id="kv">
+    <div class="kv-inner">
+      <h1 class="logo animate__animated animate__kvLogoSlideInUp animate__delay-1s wow rellax" data-rellax-speed="1">
+        <picture>
+          <source srcset="{{ 'logo_n.webp' | file_url }}" type="image/webp">
+          <img src="{{ 'logo_n.png' | file_url }}" type="image/png" alt="HABUSH" width="476">
+        </picture>
+      </h1>
+      <div class="swiper-pagination"></div>
+      <div class="swiper kv-list animate__animated animate__slideInUp animate__delay-1s wow">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="{{ 'slide01.webp' | file_url }}" type="image/webp" media="(min-width: 768px)">
+              <source srcset="{{ 'slide01.jpg' | file_url }}" type="image/jpg" media="(min-width: 768px)">
+              <source srcset="{{ 'slide01-sp.webp' | file_url }}" type="image/webp">
+              <img
+                src="{{ 'slide01-sp.jpg' | file_url }}"
+                alt=""
+                type="image/jpg"
+                data-swiper-parallax-x="80%"
+                data-swiper-parallax-scale="1"
+              >
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source srcset="{{ 'slide02.webp' | file_url }}" type="image/webp" media="(min-width: 768px)">
+              <source srcset="{{ 'slide02.jpg' | file_url }}" type="image/jpg" media="(min-width: 768px)">
+              <source srcset="{{ 'slide02-sp.webp' | file_url }}" type="image/webp">
+              <img
+                src="{{ 'slide02-sp.jpg' | file_url }}"
+                alt=""
+                type="image/jpg"
+                data-swiper-parallax-x="80%"
+                data-swiper-parallax-scale="1"
+              >
+            </picture>
+          </div>
+        </div>
+      </div>
+      <div class="name rellax" data-rellax-speed="1">
+        <picture>
+          <source srcset="{{ 'awich-name.webp' | file_url }}" type="image/webp">
+          <img src="{{ 'awich-name.png' | file_url }}" type="image/png" alt="Awich" width="483">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+    <style>
+    #product .memo-main {
+      width: 286px;
+    }
+      #product .memo {
+        width: 286px;
+      }
+   @media screen and (max-width: 1070px) {
+        #product .item {
+          margin-left: 70px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+       #product .memo-main {
+          width: 100%;
+      }
+      #product .info .memo {
+        white-space: wrap;
+        width: 100%;
+      }
+      #product .item {
+          margin: 0 auto;
+      }
+      #product .flex-item {
+        width: 160px;
+      }
+      #product .flex {
+        justify-content: center;
+        column-gap: 40px !important;
+      }
+    }
+
+    </style>
+  
+  <section id="product">
+    {% comment %} <a class="bnr-gift" href="/products/horidays"><img src="{{ 'bnr-gift.png' | file_url }}" type="image/png" alt="ギフトバナー" class="lazyload" width="179"></a> {% endcomment %}
+    <div class="section-container">
+      <div class="product-inner justify-content-between align-items-center wow animate__animated animate__fadeInUp">
+        <h2 class="logo">
+          <picture>
+            <source srcset="{{ 'logo_n.webp' | file_url }}" type="image/webp">
+            <img src="{{ 'logo_n.png' | file_url }}" type="image/png" alt="HABUSH" class="lazyload" width="179">
+          </picture>
+        </h2>
+        <div class="item">
+          <picture>
+            <source srcset="{{ 'item.webp' | file_url }}" type="image/webp">
+            <img src="{{ 'item.png' | file_url }}" type="image/png" alt="" class="lazyload" width="338">
+          </picture>
+        </div>
+        <div class="info">
+          <p class="memo-main">
+            {{ section.settings.top_product_explain }}
+          </p>
+          <div class="sp-flex justify-content-center flex">
+            <p class="head en for-sp">Price - Info</p>
+            <div class="flex-item">
+              <div
+                class="no-js-hidden product__price"
+                id="price-{{ section.id }}"
+                role="status"
+                {{ block.shopify_attributes }}
+              >
+                {%-
+                  render 'price',
+                  product: all_products['habush'],
+                  use_variant: true,
+                  show_badges: true,
+                -%}
+              </div>
+              <p class="detail">
+                {{ section.settings.top_product_capacity }}
+              </p>
+              <p class="memo">
+                {{ section.settings.top_product_remark }}
+              </p>
+            </div>
+          </div>
+          {% if all_products.habush.available %}
+            {% if request.path contains '/en' %}
+              <a class="purchase_btn" href="/en/cart/add?id=47170814214439&quantity=1">
+                <span> {{ section.settings.top_product_add_cart }} </span>
+              </a>
+            {% else %}
+              <a class="purchase_btn" href="/cart/add?id=47170814214439&quantity=1">
+                <span> {{ section.settings.top_product_add_cart }} </span>
+              </a>
+            {% endif %}
+          {% else %}
+            <p class="purchase_btn --disable">
+              <span> {{ section.settings.top_product_sold_out }} </span>
+            </p>
+          {% endif %}
+          {% if request.path contains '/en' %}
+          <a class="purchase_btn --black" href="/en/products/habush">
+            <span> {{ section.settings.top_product_detail }} </span>
+          </a>
+          {% else %}
+          <a class="purchase_btn --black" href="/products/habush">
+            <span> {{ section.settings.top_product_detail }} </span>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="product-bg">
+      <picture>
+        <source srcset="{{ 'product-bg.webp' | file_url }}" type="image/webp">
+        <img
+          src="{{ 'product-bg.png' | file_url }}"
+          type="image/png"
+          alt=""
+          class="wow animate__animated animate__zoomIn2 animate__delay-fast lazyload"
+        >
+      </picture>
+    </div>
+  </section>
+
+
+
+  <section id="story">
+    <div class="story-entry">
+      <div class="story-pic-inner">
+        <picture>
+          <source srcset="{{ 'story.webp' | file_url }}" type="image/webp" media="(min-width: 768px)">
+          <source srcset="{{ 'story-sp.webp' | file_url }}" type="image/webp">
+          <source srcset="{{ 'story.jpg' | file_url }}" type="image/jpg" media="(min-width: 768px)">
+          <img
+            src="{{ 'story-sp.jpg' | file_url }}"
+            type="image/jpg"
+            alt=""
+            class="wow animate__animated animate__zoomIn2 animate__delay-half lazyload"
+          >
+        </picture>
+      </div>
+      <div class="loop-list loop-normal">
+        <div><img src="{{ 'story-head.svg' | file_url }}" alt="BRAND STORY" width="522"></div>
+        <div class="difference"><img src="{{ 'story-head.svg' | file_url }}" alt="BRAND STORY" width="522"></div>
+        <div><img src="{{ 'story-head.svg' | file_url }}" alt="BRAND STORY" width="522"></div>
+        <div><img src="{{ 'story-head.svg' | file_url }}" alt="BRAND STORY" width="522"></div>
+        <div><img src="{{ 'story-head.svg' | file_url }}" alt="BRAND STORY" width="522"></div>
+        <div><img src="{{ 'story-head.svg' | file_url }}" alt="BRAND STORY" width="522"></div>
+        <div class="difference"><img src="{{ 'story-head.svg' | file_url }}" alt="BRAND STORY" width="522"></div>
+        <div><img src="{{ 'story-head.svg' | file_url }}" alt="BRAND STORY" width="522"></div>
+        <div><img src="{{ 'story-head.svg' | file_url }}" alt="BRAND STORY" width="522"></div>
+        <div><img src="{{ 'story-head.svg' | file_url }}" alt="BRAND STORY" width="522"></div>
+      </div>
+    </div>
+    <div id="story-main" class="story-main">
+      <h2 class="copy rellax" data-rellax-speed="1">
+        {{ section.settings.top_shot_title }}
+      </h2>
+      <div class="story-inner justify-content-between wow animate__animated animate__fadeInUp">
+        <p class="head en">{{ section.settings.top_shot_head }}</p>
+        <style>
+          .story-inner .text {
+            width: min(537px, 100%);
+          }
+        </style>
+        <div class="text">
+          {{ section.settings.top_shot_text2 }}
+        </div>
+      </div>
+      <span class="story-bg"></span>
+    </div>
+    <div class="story-kv">
+      <picture class="">
+        <source srcset="{{ 'story-kv.webp' | file_url }}" type="image/webp" media="(min-width: 768px)">
+        <source srcset="{{ 'story-kv-sp.webp' | file_url }}" type="image/webp">
+        <source srcset="{{ 'story-kv.jpg' | file_url }}" type="image/jpg" class="lazyload" media="(min-width: 768px)">
+        <img
+          src="{{ 'story-kv-sp.jpg' | file_url }}"
+          type="image/jpg"
+          alt=""
+          class="wow animate__animated animate__zoomIn2 animate__delay-half lazyload"
+        >
+      </picture>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="process__container">
+      <div class="loop-list loop-normal">
+        <div><img src="{{ 'process.svg' | file_url }}" alt="PROCESS" width="339"></div>
+        <div><img src="{{ 'process.svg' | file_url }}" alt="PROCESS" width="339"></div>
+        <div><img src="{{ 'process.svg' | file_url }}" alt="PROCESS" width="339"></div>
+        <div><img src="{{ 'process.svg' | file_url }}" alt="PROCESS" width="339"></div>
+        <div><img src="{{ 'process.svg' | file_url }}" alt="PROCESS" width="339"></div>
+        <div><img src="{{ 'process.svg' | file_url }}" alt="PROCESS" width="339"></div>
+        <div><img src="{{ 'process.svg' | file_url }}" alt="PROCESS" width="339"></div>
+        <div><img src="{{ 'process.svg' | file_url }}" alt="PROCESS" width="339"></div>
+        <div><img src="{{ 'process.svg' | file_url }}" alt="PROCESS" width="339"></div>
+        <div><img src="{{ 'process.svg' | file_url }}" alt="PROCESS" width="339"></div>
+        <div><img src="{{ 'process.svg' | file_url }}" alt="PROCESS" width="339"></div>
+        <div><img src="{{ 'process.svg' | file_url }}" alt="PROCESS" width="339"></div>
+      </div>
+      {% if request.path contains '/en' %}
+        <a class="process__img-wrap" href="/en/pages/process" id="imageContainer"></a>
+        <a class="process__img-wrap2" href="/en/pages/process" id="imageContainer2"></a>
+      {% else %}
+        <a class="process__img-wrap" href="/pages/process" id="imageContainer"></a>
+        <a class="process__img-wrap2" href="/pages/process" id="imageContainer2"></a>
+      {% endif %}
+    </div>
+
+    <div class="process__more-wrap">
+      {% if request.path contains '/en' %}
+        <a class="process__more" href="/en/pages/process">
+          <span class="en">MORE</span>
+          <img src="{{ 'icon_arrow.png' | file_url }}" alt="矢印のアイコン" width="20" height="20" loading="lazy">
+        </a>
+      {% else %}
+        <a class="process__more" href="/pages/process">
+          <span class="en">MORE</span>
+          <img src="{{ 'icon_arrow.png' | file_url }}" alt="矢印のアイコン" width="20" height="20" loading="lazy">
+        </a>
+      {% endif %}
+    </div>
+  </section>
+
+  <section id="recipe">
+    <div class="loop-list loop-reverse" dir="rtl">
+      <div><img src="{{ 'recipe_title.png' | file_url }}" alt="RECIPE" width="258"></div>
+      <div><img src="{{ 'recipe_title.png' | file_url }}" alt="RECIPE" width="258"></div>
+      <div><img src="{{ 'recipe_title.png' | file_url }}" alt="RECIPE" width="258"></div>
+      <div><img src="{{ 'recipe_title.png' | file_url }}" alt="RECIPE" width="258"></div>
+      <div><img src="{{ 'recipe_title.png' | file_url }}" alt="RECIPE" width="258"></div>
+      <div><img src="{{ 'recipe_title.png' | file_url }}" alt="RECIPE" width="258"></div>
+      <div><img src="{{ 'recipe_title.png' | file_url }}" alt="RECIPE" width="258"></div>
+      <div><img src="{{ 'recipe_title.png' | file_url }}" alt="RECIPE" width="258"></div>
+      <div><img src="{{ 'recipe_title.png' | file_url }}" alt="RECIPE" width="258"></div>
+      <div><img src="{{ 'recipe_title.png' | file_url }}" alt="RECIPE" width="258"></div>
+      <div><img src="{{ 'recipe_title.png' | file_url }}" alt="RECIPE" width="258"></div>
+      <div><img src="{{ 'recipe_title.png' | file_url }}" alt="RECIPE" width="258"></div>
+    </div>
+    <div class="recipe__scrollbar">{{ section.settings.top_recipe_head }}</div>
+
+    <div class="recipe__swiper recipe__container">
+      <div class="swiper-wrapper recipe__container-inner">
+        <a href="{% if request.path contains '/en' %}/en{% endif %}/pages/recipe" class="recipe__slide swiper-slide" slide="0" onclick="saveSlideAttribute(this)">
+          <div class="picture">
+            <img src="{{ 'recipe-main1.png' | file_url }}" alt="コーヒーの画像" width="258">
+          </div>
+          <div class="title-wrap">
+            <div class="title title1">
+              <img
+                class="text"
+                src="{{ 'text_habucoffee.svg' | file_url }}"
+                alt="HABU COFFEE"
+                width="190"
+                height="45"
+              >
+              <p>&plus; {{ section.settings.top_recipe_coffee }} </p>
+            </div>
+            <img
+              class="arrow"
+              src="{{ 'icon-arrow-white.png' | file_url }}"
+              alt="矢印のアイコン"
+              width="20"
+              height="20"
+            >
+          </div>
+        </a>
+        <a href="{% if request.path contains '/en' %}/en{% endif %}/pages/recipe" class="recipe__slide swiper-slide" slide="1" onclick="saveSlideAttribute(this)">
+          <div class="picture">
+            <img src="{{ 'recipe-main2.png' | file_url }}" alt="コーラの画像" width="258">
+          </div>
+          <div class="title-wrap">
+            <div class="title title2">
+              <img class="text" src="{{ 'text_habucoke.svg' | file_url }}" alt="HABU COKE" width="325" height="75">
+              <p>&plus; {{ section.settings.top_recipe_cora }} </p>
+            </div>
+            <img
+              class="arrow"
+              src="{{ 'icon-arrow-white.png' | file_url }}"
+              alt="矢印のアイコン"
+              width="20"
+              height="20"
+            >
+          </div>
+        </a>
+        <a href="{% if request.path contains '/en' %}/en{% endif %}/pages/recipe" class="recipe__slide swiper-slide" slide="2" onclick="saveSlideAttribute(this)">
+          <div class="picture">
+            <img src="{{ 'recipe-main3.png' | file_url }}" alt="トニックウォーターの画像" width="258">
+          </div>
+          <div class="title-wrap">
+            <div class="title title3">
+              <img class="text" src="{{ 'text_habutonic.svg' | file_url }}" alt="HABU TONIC" width="325" height="75">
+              <p>&plus; {{ section.settings.top_recipe_water }}</p>
+            </div>
+            <img
+              class="arrow"
+              src="{{ 'icon-arrow-white.png' | file_url }}"
+              alt="矢印のアイコン"
+              width="20"
+              height="20"
+            >
+          </div>
+        </a>
+        <a href="{% if request.path contains '/en' %}/en{% endif %}/pages/recipe" class="recipe__slide swiper-slide" slide="3" onclick="saveSlideAttribute(this)">
+          <div class="picture">
+            <img src="{{ 'recipe-main4.png' | file_url }}" alt="エナジードリンクの画像" width="258">
+          </div>
+          <div class="title-wrap">
+            <div class="title title4">
+              <img class="text" src="{{ 'text_habuenegy.svg' | file_url }}" alt="HABU ENERGY" width="325" height="75">
+              <p>&plus; {{ section.settings.top_recipe_energy }}</p>
+            </div>
+            <img
+              class="arrow"
+              src="{{ 'icon-arrow-white.png' | file_url }}"
+              alt="矢印のアイコン"
+              width="20"
+              height="20"
+            >
+          </div>
+        </a>
+        <a href="{% if request.path contains '/en' %}/en{% endif %}/pages/recipe" class="recipe__slide swiper-slide" slide="4" onclick="saveSlideAttribute(this)">
+          <div class="picture">
+            <img src="{{ 'recipe-main5.png' | file_url }}" alt="さんぴん茶の画像" width="258">
+          </div>
+          <div class="title-wrap">
+            <div class="title title5">
+              <img
+                class="text"
+                src="{{ 'text_habusanpin.svg' | file_url }}"
+                alt="HABU SANPIN"
+                width="325"
+                height="75"
+              >
+              <p>&plus; {{ section.settings.top_recipe_sanpin_tea }}</p>
+            </div>
+            <img
+              class="arrow"
+              src="{{ 'icon-arrow-white.png' | file_url }}"
+              alt="矢印のアイコン"
+              width="20"
+              height="20"
+            >
+          </div>
+        </a>
+        <a href="{% if request.path contains '/en' %}/en{% endif %}/pages/recipe" class="recipe__slide swiper-slide" slide="5" onclick="saveSlideAttribute(this)">
+          <div class="picture">
+            <img src="{{ 'recipe-main6.png' | file_url }}" alt="牛乳の画像" width="258">
+          </div>
+          <div class="title-wrap">
+            <div class="title title6">
+              <img class="text" src="{{ 'text_habumilk.svg' | file_url }}" alt="HABU MILK" width="325" height="75">
+              <p>&plus; {{ section.settings.top_recipe_milk }}</p>
+            </div>
+            <img
+              class="arrow"
+              src="{{ 'icon-arrow-white.png' | file_url }}"
+              alt="矢印のアイコン"
+              width="20"
+              height="20"
+            >
+          </div>
+        </a>
+        <a href="{% if request.path contains '/en' %}/en{% endif %}/pages/recipe" class="recipe__slide swiper-slide" slide="6" onclick="saveSlideAttribute(this)">
+          <div class="picture">
+            <img src="{{ 'recipe-main7.png' | file_url }}" alt="飲むヨーグルトの画像" width="258">
+          </div>
+          <div class="title-wrap">
+            <div class="title title7">
+              <img class="text" src="{{ 'text_habuyogur.svg' | file_url }}" alt="HABU YOGUR" width="325" height="75">
+              <p>&plus; {{ section.settings.top_recipe_yogurt }}</p>
+            </div>
+            <img
+              class="arrow"
+              src="{{ 'icon-arrow-white.png' | file_url }}"
+              alt="矢印のアイコン"
+              width="20"
+              height="20"
+            >
+          </div>
+        </a>
+        <a href="{% if request.path contains '/en' %}/en{% endif %}/pages/recipe" class="recipe__slide swiper-slide" slide="7" onclick="saveSlideAttribute(this)">
+          <div class="picture">
+            <img src="{{ 'recipe-main8.png' | file_url }}" alt="グレープフルーツジュースの画像" width="258">
+          </div>
+          <div class="title-wrap">
+            <div class="title title8">
+              <img class="text" src="{{ 'text_habudog.svg' | file_url }}" alt="HAB DOG" width="325" height="75">
+              <p>&plus; {{ section.settings.top_recipe_grapefruit }}</p>
+            </div>
+            <img
+              class="arrow"
+              src="{{ 'icon-arrow-white.png' | file_url }}"
+              alt="矢印のアイコン"
+              width="20"
+              height="20"
+            >
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="recipe__more">
+      <a class="recipe__more-btn" href="{% if request.path contains '/en' %}/en{% endif %}/pages/recipe">
+        <span class="en">MORE</span>
+        <img src="{{ 'icon-arrow-white.png' | file_url }}" alt="矢印のアイコン" width="20" height="20">
+      </a>
+    </div>
+  </section>
+
+  <section id="sns">
+    <div class="section-container justify-content-between">
+      <div class="left-content d-flex justify-content-between wow animate__animated animate__fadeInUp">
+        <h2 class="head">
+          <img src="{{ 'sns-header.svg' | file_url }}" alt="SNS" width="100">
+        </h2>
+        <div class="info">
+          <p>
+            {{ section.settings.top_sns }}
+            <a href="https://www.instagram.com/habush.jp/" target="_blank" class="lazyload" rel="noopener noreferrer">
+              <img src="{{ 'sns-icon.png' | file_url }}" alt="" width="42" class="lazyload">
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="right-content wow animate__animated animate__fadeInUp">
+        <div class="d-flex flex-wrap">
+          <div class="sns-item">
+            <picture>
+              <source srcset="{{ 'sns-lt.webp' | file_url }}" type="image/webp" class="lazyload">
+              <img src="{{ 'sns-lt.jpg' | file_url }}" alt="" class="lazyload">
+            </picture>
+          </div>
+          <div class="sns-item">
+            <picture>
+              <source srcset="{{ 'sns-rt.webp' | file_url }}" type="image/webp" class="lazyload">
+              <img src="{{ 'sns-rt.jpg' | file_url }}" alt="" class="lazyload">
+            </picture>
+          </div>
+          <div class="sns-item">
+            <picture>
+              <source srcset="{{ 'sns-lb.webp' | file_url }}" type="image/webp" class="lazyload">
+              <img src="{{ 'sns-lb.jpg' | file_url }}" alt="" class="lazyload">
+            </picture>
+          </div>
+          <div class="sns-item">
+            <picture>
+              <source srcset="{{ 'sns-rb.webp' | file_url }}" type="image/webp" class="lazyload">
+              <img src="{{ 'sns-rb.jpg' | file_url }}" alt="" class="lazyload">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% unless request.path contains '/en' %}
+  <section id="topic" class="en-none">
+    <div class="section-container justify-content-between c_topTopic__container">
+      <div class="left-content wow animate__animated animate__fadeInUp">
+        <h2 class="head">
+          <img src="{{ 'TOPICS.png' | file_url }}" alt="TOPICS" width="270">
+        </h2>
+        <div class="c_topTopic__tag-wrap">
+          <p href="#c_topicAll" class="current">ALL</p>
+          {% assign tag_index = 1 %}
+          {% for tag in blogs.topic.all_tags %}
+            <p href="#c_topic{{ tag_index }}" class="{% if current_tags contains tag %}current{% endif %}">{{ tag }}</p>
+            {% assign tag_index = tag_index | plus: 1 %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="right-content wow animate__animated animate__fadeInUp">
+        <div class="c_topTopic__wrap js-open" id="c_topicAll">
+          {% for article in blogs.topic.articles limit: 3 %}
+            <a
+              class="c_topic__item{% if article.metafields.custom.title-only %} title-only{% endif %}"
+              {% if article.metafields.custom.link %}
+                target="_blank" href="{{ article.metafields.custom.link }}"
+              {% else %}
+                href="{{ article.url }}"
+              {% endif %}
+            >
+              <div class="c_topic__item-meta">
+                <time>
+                  {{ article.published_at | date: '%Y.%m.%d' }}
+                </time>
+                {% if article.tags.size > 0 %}
+                  <p class="tag">[{{ article.tags.first }}]</p>
+                {% endif %}
+              </div>
+              <p class="c_topNews__item-title">
+                {%- assign published_date = article.published_at | date: '%s' -%}
+                {%- assign current_date = 'today' | date: '%s' -%}
+                {%- assign passed_days_from_publish = current_date | minus: published_date | divided_by: 86400 -%}
+                {%- if passed_days_from_publish <= 7 -%}
+                  <span class="c_new_label">NEW</span>
+                {%- endif -%}
+                <span class="text">
+                  {{ article.title }}
+                  <img class="arrow" src="{{ 'arrow-up.png' | file_url }}" alt="上矢印" width="16">
+                </span>
+              </p>
+            </a>
+          {% endfor %}
+          {% if article_count > 3 %}
+            <div class="c_topTopic__more">
+              <a href="/blogs/topic">
+                <span>{{ section.settings.text_more }}</span>
+                <img class="arrow" src="{{ 'arrow-up.png' | file_url }}" alt="上矢印" width="16">
+              </a>
+            </div>
+          {% endif %}
+        </div>
+
+        {% assign tag_wrap_index = 1 %}
+        {% for topic_tag in blogs.topic.all_tags %}
+          <div class="c_topTopic__wrap" id="c_topic{{ tag_wrap_index }}">
+            {% assign article_count = 0 %}
+            {% for article in blogs.topic.articles %}
+              {% for tag in article.tags %}
+                {% if article.tags contains topic_tag %}
+                  {% assign article_count = article_count | plus: 1 %}
+                  {% if article_count <= 3 %}
+                    <a
+                      class="c_topic__item{% if article.metafields.custom.title-only %} title-only{% endif %}"
+                      {% if article.metafields.custom.link %}
+                        target="_blank" href="{{ article.metafields.custom.link }}"
+                      {% else %}
+                        href="{{ article.url }}"
+                      {% endif %}
+                    >
+                      <div class="c_topic__item-meta">
+                        <time>
+                          {{ article.published_at | date: '%Y.%m.%d' }}
+                        </time>
+                        <p class="tag">[{{ tag }}]</p>
+                      </div>
+                      <p class="c_topNews__item-title">
+                        {%- assign published_date = article.published_at | date: '%s' -%}
+                        {%- assign current_date = 'today' | date: '%s' -%}
+                        {%- assign passed_days_from_publish = current_date
+                          | minus: published_date
+                          | divided_by: 86400
+                        -%}
+                        {%- if passed_days_from_publish <= 7 -%}
+                          <span class="c_new_label">NEW</span>
+                        {%- endif -%}
+                        <span class="text">
+                          {{ article.title }}
+                          <img class="arrow" src="{{ 'arrow-up.png' | file_url }}" alt="上矢印" width="16">
+                        </span>
+                      </p>
+                    </a>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+
+            {% if article_count > 3 %}
+              <div class="c_topTopic__more">
+                <a href="/blogs/topic/tagged/{{ topic_tag | handle }}">
+                  <span>{{ section.settings.text_more }}</span>
+                  <img class="arrow" src="{{ 'arrow-up.png' | file_url }}" alt="上矢印" width="16">
+                </a>
+              </div>
+            {% endif %}
+          </div>
+          {% assign tag_wrap_index = tag_wrap_index | plus: 1 %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endunless %}
+
+</main>
+
+{% schema %}
+{
+  "name": "トップデザイン",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "top product"
+    },
+    {
+      "type": "textarea",
+      "id": "top_product_explain",
+      "label": "商品説明",
+      "default": "サトウキビからつくった59度のアルコールに<br class='for-pc'>浸けて抽出し、香り高い13種類（または8種類）<br class='for-pc'>のハーブ酒（泡盛ベース）と合わせたハブ酒。"
+    },
+    {
+      "type": "textarea",
+      "id": "top_product_capacity",
+      "label": "商品容量",
+      "default": "内容量 500ml<br>アルコール度数 35度"
+    },
+    {
+      "type": "textarea",
+      "id": "top_product_remark",
+      "label": "商品容量",
+      "default": "これはお酒です。<br>20歳未満の者の飲酒は法律で<br class='for-sp'>禁止されています。"
+    },
+    {
+      "type": "textarea",
+      "id": "top_product_add_cart",
+      "label": "カートに入れる",
+      "default": "カートに入れる&emsp;&RightArrow;"
+    },
+    {
+      "type": "textarea",
+      "id": "top_product_sold_out",
+      "label": "カートに入れる",
+      "default": "売り切れ&emsp;&RightArrow;"
+    },
+    {
+      "type": "textarea",
+      "id": "top_product_detail",
+      "label": "商品詳細をみる",
+      "default": "商品詳細をみる&emsp;&RightArrow;"
+    },
+    {
+      "type": "header",
+      "content": "Energy shot for you"
+    },
+    {
+      "type": "textarea",
+      "id": "top_shot_title",
+      "label": "タイトル",
+      "default": "Energy Shot<br><span>f</span>or You"
+    },
+    {
+      "type": "textarea",
+      "id": "top_shot_head",
+      "label": "見出し",
+      "default": "Okinawa - Japan"
+    },
+    {
+      "type": "textarea",
+      "id": "top_shot_text2",
+      "label": "商品詳細をみる",
+      "default": "ハーブの香り、ほのかな甘さ。<br>一口飲めば、カラダが芯からアツくなってくる。<br><br>沖縄で大切にされてきた伝統的な薬膳酒「ハブ酒」は、<br>滋養強壮パワーはそのままに飲みやすい「HABUSH」<br class='for-sp'>として生まれ変わりました。<br><br>沖縄で「ヌチグスイ（命薬）」と呼ばれる<br class='for-sp'>「薬になるほどの効果がある食べ物や飲み物」を<br>目指し、十三種類のハーブエキスや、<br class='for-sp'>命の源である成分を多く含むハブエキスを配合。<br>職人たちが1本1本丁寧に仕上げています。<br><br>Awichがプロデュースするのは、<br class='for-sp'>刺激を求める大人たちのエネルギッシュな夜の時間。<br>セクシーに、スタイリッシュに、<br class='for-sp'>エネルギッシュに、楽しい夜を演出します。"
+    },
+    {
+      "type": "header",
+      "content": "top recipe"
+    },
+    {
+      "type": "textarea",
+      "id": "top_recipe_head",
+      "label": "レシピ 見出し",
+      "default": "Match with a Variety of Tastes"
+    },
+    {
+      "type": "textarea",
+      "id": "top_recipe_coffee",
+      "label": "コーヒー",
+      "default": "ブラックコーヒー"
+    },
+    {
+      "type": "textarea",
+      "id": "top_recipe_cora",
+      "label": "コーラ",
+      "default": "コーラ"
+    },
+    {
+      "type": "textarea",
+      "id": "top_recipe_water",
+      "label": "トニックウォーター",
+      "default": "トニックウォーター"
+    },
+    {
+      "type": "textarea",
+      "id": "top_recipe_energy",
+      "label": "エナジードリンク",
+      "default": "エナジードリンク"
+    },
+    {
+      "type": "textarea",
+      "id": "top_recipe_sanpin_tea",
+      "label": "さんぴん茶",
+      "default": "さんぴん茶"
+    },
+    {
+      "type": "textarea",
+      "id": "top_recipe_milk",
+      "label": "牛乳",
+      "default": "牛乳"
+    },
+    {
+      "type": "textarea",
+      "id": "top_recipe_yogurt",
+      "label": "ヨーグルト",
+      "default": "ヨーグルト"
+    },
+    {
+      "type": "textarea",
+      "id": "top_recipe_grapefruit",
+      "label": "グレープフルーツ",
+      "default": "グレープフルーツ"
+    },
+    {
+      "type": "textarea",
+      "id": "top_sns",
+      "label": "SNS 英語テキスト",
+      "default": "INSTAGRAM<br>PHOTO<br><br>HABUSH.JP<br><br>"
+    },
+    {
+      "type": "textarea",
+      "id": "text_more",
+      "label": "more",
+      "default": "more"
+    },
+  ],
+  "presets": [
+    {
+      "name": "トップデザイン",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
