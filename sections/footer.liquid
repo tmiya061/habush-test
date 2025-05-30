@@ -103,7 +103,7 @@
 　　　　{% if path == '/en' %}
         <ul>
           <li><a href="#">{{ section.settings.footer_list1 }}</a></li>
-          <li><a href="/en/collections/all">{{ section.settings.footer_list2 }}</a></li>
+          <li><a href="/en/collections/products">{{ section.settings.footer_list2 }}</a></li>
           <li><a href="#story-main">{{ section.settings.footer_list3 }}</a></li>
           <li><a href="/en/pages/process">{{ section.settings.footer_list4 }}</a></li>
           <li><a href="/en/pages/recipe">{{ section.settings.footer_list5 }}</a></li>
@@ -113,7 +113,7 @@
         {% elsif pathhash == '/en' %}
         <ul>
           <li><a href="#">{{ section.settings.footer_list1 }}</a></li>
-          <li><a href="/en/collections/all">{{ section.settings.footer_list2 }}</a></li>
+          <li><a href="/en/collections/products">{{ section.settings.footer_list2 }}</a></li>
           <li><a href="#story-main">{{ section.settings.footer_list3 }}</a></li>
           <li><a href="/en/pages/process">{{ section.settings.footer_list4 }}</a></li>
           <li><a href="/en/pages/recipe">{{ section.settings.footer_list5 }}</a></li>
@@ -123,7 +123,7 @@
         {% elsif template == 'index' %}
         <ul>
           <li><a href="{% if request.path contains '/en' %}/en{% endif %}/">{{ section.settings.footer_list1 }}</a></li>
-          <li><a href="{% if request.path contains '/en' %}/en{% endif %}/collections/all">{{ section.settings.footer_list2 }}</a></li>
+          <li><a href="{% if request.path contains '/en' %}/en{% endif %}/collections/products">{{ section.settings.footer_list2 }}</a></li>
           <li><a href="{% if request.path contains '/en' %}/en{% endif %}#story-main">{{ section.settings.footer_list3 }}</a></li>
           <li><a href="{% if request.path contains '/en' %}/en{% endif %}/pages/process">{{ section.settings.footer_list4 }}</a></li>
           <li><a href="{% if request.path contains '/en' %}/en{% endif %}/pages/recipe">{{ section.settings.footer_list5 }}</a></li>
@@ -134,7 +134,7 @@
         {% else %}
         <ul>
           <li><a href="{% if request.path contains '/en' %}/en{% endif %}/">{{ section.settings.footer_list1 }}</a></li>
-          <li><a href="{% if request.path contains '/en' %}/en{% endif %}/collections/all">{{ section.settings.footer_list2 }}</a></li>
+          <li><a href="{% if request.path contains '/en' %}/en{% endif %}/collections/products">{{ section.settings.footer_list2 }}</a></li>
           <li><a href="{{ shop.url }}{% if request.path contains '/en' %}/en{% endif %}#story-main">{{ section.settings.footer_list3 }}</a></li>
           <li><a href="{% if request.path contains '/en' %}/en{% endif %}/pages/process">{{ section.settings.footer_list4 }}</a></li>
           <li><a href="{% if request.path contains '/en' %}/en{% endif %}/pages/recipe">{{ section.settings.footer_list5 }}</a></li>

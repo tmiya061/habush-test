@@ -1190,6 +1190,11 @@ window.addEventListener("load", function () {
     <script src="{{ 'luxy.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'rellax.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'main.js' | asset_url }}" defer="defer"></script>
+    <script>
+      if (window.location.pathname === '/collections/all') {
+        window.location.href = '/collections/products';
+      }
+    </script>
     <!-- <script>
       window.addEventListener("load", function() {
         setTimeout(() => {
