@@ -11,6 +11,9 @@ td {
   border: none !important;
   vertical-align: top;
 }
+.us-dollar tr td:first-child {
+  width: 37.4853%;
+}
 .content-for-layout {
   margin-top: 20rem;
 }
