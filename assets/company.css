@@ -9,6 +9,7 @@ p {
 }
 td {
   border: none !important;
+  vertical-align: top;
 }
 .content-for-layout {
   margin-top: 20rem;
@@ -17,12 +18,20 @@ h1 {
   font-size: 40px;
   line-height: 0.9;
   text-align: center;
-  margin-bottom: 11rem !important;
+  margin-bottom: 6rem !important;
+}
+table:not([class]) {
+  box-shadow: none !important;
 }
 @media screen and (max-width: 768px) {
   .rte {
     width: 100%;
     height: auto;
     padding: 55px 0 60px;
+  }
+  h1 {
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 35px !important;
   }
 }
