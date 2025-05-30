@@ -70,28 +70,29 @@
     <div class="{% unless request.path contains '/en' %}company {% endunless %}footer-menu-bar-item text-center">
       {% assign path = request.path | split: '?' | first %}
       {% assign pathhash = request.path | split: '#' | first %}
-　　　{% if path == '/en' %}
-      <a href="#info" style="display: inline-block;">
-        <p><span class="en" style="margin-inline: 0;">COMPANY</span></p>
-      </a>
+      {% if path == '/en' %}
+        <a href="/en/pages/company" style="display: inline-block;">
+          <p><span class="en" style="margin-inline: 0;">COMPANY</span></p>
+        </a>
       {% elsif pathhash == '/en' %}
-      <a href="#info" style="display: inline-block;">
-        <p><span class="en" style="margin-inline: 0;">COMPANY</span></p>
-      </a>
+        <a href="/en/pages/company" style="display: inline-block;">
+          <p><span class="en" style="margin-inline: 0;">COMPANY</span></p>
+        </a>
       {% elsif request.path contains '/en' %}
-          <a href="{{shop.url}}/en#info" style="display: inline-block;">
-        <p><span class="en" style="margin-inline: 0;">COMPANY</span></p>
-      </a>
+        <a href="{{ shop.url }}/en/pages/company" style="display: inline-block;">
+          <p><span class="en" style="margin-inline: 0;">COMPANY</span></p>
+        </a>
       {% elsif template == 'index' %}
-      <a href="#info" style="display: inline-block;">
-        <p><span class="en">COMPANY</span>{{ section.settings.footer_privacy_company }}</p>
-      </a>
-     {% else %}
-      <a href="{{shop.url}}#info" style="display: inline-block;">
-        <p><span class="en">COMPANY</span>{{ section.settings.footer_privacy_company }}</p>
-      </a>
+        <a href="/pages/company" style="display: inline-block;">
+          <p><span class="en">COMPANY</span>{{ section.settings.footer_privacy_company }}</p>
+        </a>
+      {% else %}
+        <a href="{{ shop.url }}/pages/company" style="display: inline-block;">
+          <p><span class="en">COMPANY</span>{{ section.settings.footer_privacy_company }}</p>
+        </a>
       {% endif %}
     </div>
+
   </div>
 
 <div class="footer-main">
