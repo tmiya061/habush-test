@@ -294,6 +294,14 @@
     {% if path == '/pages/company' or path == '/en/pages/company' %}
       <link rel="stylesheet" href="{{ 'company.css' | asset_url }}">
     {% endif %}
+    {% assign path = request.path | split: '?' | first %}
+    {% if path == '/en/pages/company' %}
+      <style>
+        tr td:first-child {
+          width: 37.4853% !important;
+        }
+      </style>
+    {% endif %}
 
 
     {%- unless settings.type_body_font.system? -%}
@@ -1191,8 +1199,11 @@ window.addEventListener("load", function () {
     <script src="{{ 'rellax.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'main.js' | asset_url }}" defer="defer"></script>
     <script>
-      if (window.location.pathname === '/collections/all') {
-        window.location.href = '/collections/products';
+      if (
+        window.location.pathname === '/collections/all' ||
+        window.location.pathname === '/en/collections/all'
+      ) {
+        window.location.href = window.location.pathname.replace('/collections/all', '/collections/products');
       }
     </script>
     <!-- <script>
