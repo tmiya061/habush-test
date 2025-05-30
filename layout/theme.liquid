@@ -290,6 +290,11 @@
     <link rel="stylesheet" href="{{ 'slick.min.css' | asset_url }}" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'add.css' | asset_url }}">
+    {% assign path = request.path | split: '?' | first %}
+    {% if path == '/pages/company' or path == '/en/pages/company' %}
+      <link rel="stylesheet" href="{{ 'company.css' | asset_url }}">
+    {% endif %}
+
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
