@@ -30,7 +30,7 @@ table:not([class]) {
     padding: 25px 0 60px;
   }
   h1 {
-    font-size: 24px;
+    font-size: 24px !important;
     line-height: 1;
     margin-bottom: 35px !important;
   }
