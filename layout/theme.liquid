@@ -1,34 +1,35 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}" style="overflow: hidden;">
   <head>
-      <!-- Google Tag Manager -->
-      <script>
-        (function (w, d, s, l, i) {
-          w[l] = w[l] || [];
-          w[l].push({
-            'gtm.start': new Date().getTime(),
-            event: 'gtm.js'
-          });
-          var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s),
-            dl = l != 'dataLayer' ? '&l=' + l : '';
-          j.async = true;
-          j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-          f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-W6J2H26');
-      </script>
-      <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js',
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-W6J2H26');
+    </script>
+    <!-- End Google Tag Manager -->
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16533779354"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16533779354"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-  gtag('config', 'AW-16533779354');
-</script>
+      gtag('config', 'AW-16533779354');
+    </script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -279,7 +280,7 @@
         body {
           font-size: 1.6rem;
         }
-      } 
+      }
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
@@ -297,12 +298,22 @@
     {% assign path = request.path | split: '?' | first %}
     {% if path == '/en/pages/company' %}
       <style>
-        tr td:first-child {
-          width: 37.4853% !important;
+        @media screen and (max-width: 768px) {
+          tr td:first-child {
+            width: 100%% !important;
+            margin-bottom: 10px;
+          }
+          td {
+            padding: 0;
+          }
+          tr {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 35px;
+          }
         }
       </style>
     {% endif %}
-
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -332,79 +343,93 @@
       }
     </script>
 
-  <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '382662350852305');
-    fbq('track', 'PageView');
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '382662350852305');
+      fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=382662350852305&ev=PageView&noscript=1"
-    /></noscript>
-  <!-- End Meta Pixel Code -->
- <style>
-   #transcyBtnSwitcher .transcy-locale-name.transcy-currency-locale-name {
-     translate: -12px;
-   }
-   .announcement-bar-hidden {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-  }
-   @media screen and (max-width: 768px) {
-     body {
-       max-width: 100%;
-     }
-     header .menu {
-       top: 60px !important;
-     }
-     html .transcy-switcher-container.transcy-switcher-position__floating.transcy-switcher-position__top_right {
-       top: 100px !important;
-     }
-     header .sns-icons {
-       top: 55px !important;
-       right: 90px !important;
-     }
-     .header-container .symbol {
-       top: 60px !important;
-     }
-     header .header-text-wrap {
-       position: relative;
-       top: 40px !important;
-     }
-    #transcyBtnSwitcher .transcy-locale-name.transcy-currency-locale-name {
-      translate: 0px;
-    }
-     #recipe, #process, .underProcess__swiper-container, .swiper-container {
-       overflow: hidden;
-     }
-     .content-for-layout {
-       margin-top: 14rem;
-     }
-   }
-   </style>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=382662350852305&ev=PageView&noscript=1"
+    ></noscript>
+    <!-- End Meta Pixel Code -->
+    <style>
+      #transcyBtnSwitcher .transcy-locale-name.transcy-currency-locale-name {
+        translate: -12px;
+      }
+      .announcement-bar-hidden {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+      @media screen and (max-width: 768px) {
+        body {
+          max-width: 100%;
+        }
+        header .menu {
+          top: 60px !important;
+        }
+        html .transcy-switcher-container.transcy-switcher-position__floating.transcy-switcher-position__top_right {
+          top: 100px !important;
+        }
+        header .sns-icons {
+          top: 55px !important;
+          right: 90px !important;
+        }
+        .header-container .symbol {
+          top: 60px !important;
+        }
+        header .header-text-wrap {
+          position: relative;
+          top: 40px !important;
+        }
+        #transcyBtnSwitcher .transcy-locale-name.transcy-currency-locale-name {
+          translate: 0px;
+        }
+        #recipe,
+        #process,
+        .underProcess__swiper-container,
+        .swiper-container {
+          overflow: hidden;
+        }
+        .content-for-layout {
+          margin-top: 14rem;
+        }
+      }
+    </style>
 
-<script>
-  window.addEventListener('scroll', function () {
-    const announcementBar = document.querySelector('.shopify-section-group-header-group.announcement-bar-section');
-    if (!announcementBar) return;
+    <script>
+      window.addEventListener('scroll', function () {
+        const announcementBar = document.querySelector('.shopify-section-group-header-group.announcement-bar-section');
+        if (!announcementBar) return;
 
-    if (window.scrollY > 10) { // ← 50px スクロールしたら非表示に
-      announcementBar.classList.add('announcement-bar-hidden');
-    } else {
-      announcementBar.classList.remove('announcement-bar-hidden');
-    }
-  });
-</script>
-
-  
+        if (window.scrollY > 10) {
+          // ← 50px スクロールしたら非表示に
+          announcementBar.classList.add('announcement-bar-hidden');
+        } else {
+          announcementBar.classList.remove('announcement-bar-hidden');
+        }
+      });
+    </script>
   </head>
 
   <body
@@ -412,7 +437,14 @@
     class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}"
   >
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6J2H26" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-W6J2H26"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -426,7 +458,12 @@
     {% sections 'header-group' %}
 
     <div id="luxy" class="js-luxy">
-      <main id="MainContent" class="{% if template == 'page.recipe' %}preload-main{% endif %} {% if template == 'page.process' %}preload-main{% endif %} content-for-layout focus-none" role="main" tabindex="-1">
+      <main
+        id="MainContent"
+        class="{% if template == 'page.recipe' %}preload-main{% endif %} {% if template == 'page.process' %}preload-main{% endif %} content-for-layout focus-none"
+        role="main"
+        tabindex="-1"
+      >
         {{ content_for_layout }}
       </main>
       {% sections 'footer-group' %}
@@ -436,70 +473,65 @@
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
     </ul>
 
-<script>
-window.addEventListener("load", function () {
-  setTimeout(function () {
-    const flag = document.querySelector('#transcyBtnSwitcher .transcy-switcher-currency .transcy-flag');
-    let isJapaneseYen = false;
+    <script>
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          const flag = document.querySelector('#transcyBtnSwitcher .transcy-switcher-currency .transcy-flag');
+          let isJapaneseYen = false;
 
-    if (flag && flag.alt === "Japanese yen") {
-      isJapaneseYen = true;
-    }
+          if (flag && flag.alt === 'Japanese yen') {
+            isJapaneseYen = true;
+          }
 
-    if (isJapaneseYen) {
-      document.body.classList.add('japan-yen');
-    } else {
-      document.body.classList.add('us-dollar');
-    }
-  }, 600); // 1000ミリ秒 = 1秒
-});
-
-</script>
-
-<script>
-function removeTaxLabels() {
-  // .totals__total-value から (税込) や (tax included) を削除
-  const totalValueEls = document.querySelectorAll('.totals__total-value');
-  totalValueEls.forEach(el => {
-    el.textContent = el.textContent
-      .replace(/\(税込\)/gi, '')
-      .replace(/\(tax included\)/gi, '');
-  });
-
-  // .tax-note の先頭の不要な表現を削除
-  const taxNoteEls = document.querySelectorAll('.tax-note');
-  taxNoteEls.forEach(el => {
-    el.textContent = el.textContent
-      .replace(/^税込(で)?(、)?\s*/gi, '')
-      .replace(/^価格です(。)?\s*/gi, '')
-      .replace(/^Tax included(。)?\s*/gi, '');
-  });
-}
-
-window.addEventListener("load", function () {
-  setTimeout(function () {
-    if (document.body.classList.contains('us-dollar')) {
-      removeTaxLabels(); // 初期表示
-    }
-
-    // すべての.quantity__buttonにクリックイベントを追加
-    document.querySelectorAll('.cart-quantity .quantity__button').forEach(btn => {
-      btn.addEventListener('click', function () {
-        setTimeout(removeTaxLabels, 300); // DOMが更新されるタイミングを少し待って実行
+          if (isJapaneseYen) {
+            document.body.classList.add('japan-yen');
+          } else {
+            document.body.classList.add('us-dollar');
+          }
+        }, 600); // 1000ミリ秒 = 1秒
       });
-    });
+    </script>
 
-    // すべての.cart-remove-buttonにクリックイベントを追加
-    document.querySelectorAll('cart-remove-button').forEach(btn => {
-      btn.addEventListener('click', function () {
-        setTimeout(removeTaxLabels, 300); // 同上
+    <script>
+      function removeTaxLabels() {
+        // .totals__total-value から (税込) や (tax included) を削除
+        const totalValueEls = document.querySelectorAll('.totals__total-value');
+        totalValueEls.forEach((el) => {
+          el.textContent = el.textContent.replace(/\(税込\)/gi, '').replace(/\(tax included\)/gi, '');
+        });
+
+        // .tax-note の先頭の不要な表現を削除
+        const taxNoteEls = document.querySelectorAll('.tax-note');
+        taxNoteEls.forEach((el) => {
+          el.textContent = el.textContent
+            .replace(/^税込(で)?(、)?\s*/gi, '')
+            .replace(/^価格です(。)?\s*/gi, '')
+            .replace(/^Tax included(。)?\s*/gi, '');
+        });
+      }
+
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          if (document.body.classList.contains('us-dollar')) {
+            removeTaxLabels(); // 初期表示
+          }
+
+          // すべての.quantity__buttonにクリックイベントを追加
+          document.querySelectorAll('.cart-quantity .quantity__button').forEach((btn) => {
+            btn.addEventListener('click', function () {
+              setTimeout(removeTaxLabels, 300); // DOMが更新されるタイミングを少し待って実行
+            });
+          });
+
+          // すべての.cart-remove-buttonにクリックイベントを追加
+          document.querySelectorAll('cart-remove-button').forEach((btn) => {
+            btn.addEventListener('click', function () {
+              setTimeout(removeTaxLabels, 300); // 同上
+            });
+          });
+        }, 1000);
       });
-    });
-  }, 1000);
-});
-
-</script>
-
+    </script>
 
     <!-- modal-01 -->
     <div id="modal-01" class="c-modal c-close-active js-modal">
@@ -508,191 +540,243 @@ window.addEventListener("load", function () {
         <span class="crossーclose"></span>
         <div class="c-modal_content_inner">
           {% if request.path contains '/en' %}
-          <h3>Privacy Policy</h3>
-          <p>
-            and okinawa Inc. recognizes the importance of personal information protection and establishes this Privacy Policy (Personal Information Protection Policy) regarding the handling of personal information in the services provided on this website (hereinafter referred to as "this Service").
-            We will build a system for protecting personal information, ensure thorough awareness and commitment to the importance of personal information protection, and strive to protect personal information.
-            <br><br><br>
-            <span>Article 1: Definition of Personal Information</span><br>
-            1. "Personal information" refers to the "personal information" as defined in the Personal Information Protection Law. It includes information related to a living individual and can identify a specific individual through name, date of birth, address, phone number, contact details, and other descriptions contained in such information.<br>
-            <br>
-            2. "History information and characteristic information" among personal information refer to information other than the "personal information" specified above. This includes the services used, products purchased, history of viewed pages or advertisements, search keywords, date and time of use, usage method, usage environment, postal code, gender, occupation, age, IP address, cookie information, location information, and unique terminal identification information.<br>
-            <br>
-            3. Our website may obtain information about advertisements clicked before visiting our site from third-party tools for the purpose of measuring advertising effectiveness and compare it with order information.<br>
-            <br><br>
-            <span>Article 2: Methods of Obtaining Personal Information</span><br>
-            1. In this Service, users may be asked for personal information such as name, date of birth, address, phone number, email address, bank account number, credit card number, or driver's license number at the time of registration. Additionally, transaction records containing personal information and payment-related information between users and partners may be obtained from our business partners (including information providers, advertisers, advertisement distributors, etc.).<br>
-            <br>
-            2. In this Service, we may collect historical and characteristic information such as the services and software used, products purchased, history of viewed pages or advertisements, search keywords, date and time of use, usage method, usage environment (including communication status of the device used and various setting information), IP address, cookie information, location information, and unique terminal identification information when users use our or our partners' services or browse pages.<br>
-            <br><br>
-            <span>Article 3: Purpose of Acquiring and Using Personal Information</span><br>
-            The purposes for which personal information is acquired and used in this Service are as follows:<br>
-            <br>
-            1. To allow users to view and modify their registration information and usage status, by displaying registered information such as name, address, contact details, payment methods, and information about the services used and products purchased.<br>
-            <br>
-            2. To notify users, send products, and contact users when necessary by using contact information such as name, address, and email address.<br>
-            <br>
-            3. To verify identity using information such as name, date of birth, address, phone number, bank account number, credit card number, driver's license number, and delivery confirmation results.<br>
-            <br>
-            4. To charge product fees using payment-related information such as purchased product names, quantities, types and duration of services used, number of times, billing amount, name, address, bank account number, and credit card number.<br>
-            <br>
-            5. To enable easier data input by displaying registered information on the input screen or transferring information to other services (including those provided by partners) based on user instructions.<br>
-            <br>
-            6. To refuse service to users who violate the terms of use, such as delaying payment or causing damage to third parties, by using information such as usage patterns, name, and address to identify individuals.<br>
-            <br>
-            7. To respond to user inquiries, by using inquiry details, billing-related information, information necessary for service provision, service usage status, and contact details.<br>
-            <br>
-            8. Any purposes incidental to the above purposes.<br>
-            <br><br>
-            <span>Article 4: Management of Personal Information</span><br>
-            We will maintain accurate and up-to-date personal information and take necessary measures such as maintaining security systems, establishing management structures, and ensuring employee education to prevent unauthorized access, loss, damage, alteration, or leakage of personal information.<br>
-            <br><br>
-            <span>Article 5: Disclosure of Personal Information</span><br>
-            1. If requested by the user, we will disclose personal information without delay. However, we may not disclose all or part of the information if it falls under any of the following cases:<br>
-            - If it may harm the life, body, property, or other rights and interests of the user or a third party.<br>
-            - If it may significantly hinder the proper execution of our business.<br>
-            - If it violates any laws or regulations.<br>
-            <br>
-            2. Notwithstanding the provisions of the preceding paragraph, history information and characteristic information other than personal information will not, in principle, be disclosed.<br>
-            <br><br>
-            <span>Article 6: Provision of Personal Information to Third Parties</span><br>
-            1. We will not provide personal information to third parties without prior consent from the user, except in cases permitted by the Personal Information Protection Law and other laws and regulations.<br>
-            <br><br>
-            <span>Article 7: Security Measures for Personal Information</span><br>
-            This Service implements thorough security measures to ensure the accuracy and safety of personal information.<br>
-            <br><br>
-            <span>Article 8: Correction and Deletion of Personal Information</span><br>
-            1. Users can request correction or deletion of their personal information if it is incorrect.<br>
-            <br>
-            2. If we deem it necessary to respond to the request, we will correct or delete the personal information and notify the user accordingly.<br>
-            <br><br>
-            <span>Article 9: Suspension of Use of Personal Information</span><br>
-            If a user requests suspension or deletion of their personal information, we will conduct an investigation and take appropriate measures.<br>
-            <br><br>
-            <span>Article 10: Compliance with Laws and Regulations & Policy Changes</span><br>
-            1. We comply with applicable Japanese laws and regulations regarding personal information.<br>
-            2. The content of this Privacy Policy may change without prior notice to users.<br>
-            3. Unless otherwise specified, the revised Privacy Policy takes effect from the time it is posted on this website.<br>
-            <br><br>
-            <span>Article 11: Personal Information Management Supervisor</span><br>
-            and okinawa Inc.<br>
-            <br><br>
-            <span>Article 12: Contact Information</span><br>
-            For inquiries regarding this Privacy Policy and the handling of personal information, please contact us at:<br>
-            and okinawa Inc.<br>
-            Address: 【Sales Office】 Shibuya SR Building, 1-20-26 Shibuya, Shibuya-ku, Tokyo, 150-0002, Japan<br>
-            TEL: 03-6427-5388<br>
-            E-MAIL: info@habush.jp
-        </p>
+            <h3>Privacy Policy</h3>
+            <p>
+              and okinawa Inc. recognizes the importance of personal information protection and establishes this Privacy
+              Policy (Personal Information Protection Policy) regarding the handling of personal information in the
+              services provided on this website (hereinafter referred to as "this Service"). We will build a system for
+              protecting personal information, ensure thorough awareness and commitment to the importance of personal
+              information protection, and strive to protect personal information.
+              <br>
+              <br>
+              <br>
+              <span>Article 1: Definition of Personal Information</span><br>
+              1. "Personal information" refers to the "personal information" as defined in the Personal Information
+              Protection Law. It includes information related to a living individual and can identify a specific
+              individual through name, date of birth, address, phone number, contact details, and other descriptions
+              contained in such information.<br>
+              <br>
+              2. "History information and characteristic information" among personal information refer to information
+              other than the "personal information" specified above. This includes the services used, products
+              purchased, history of viewed pages or advertisements, search keywords, date and time of use, usage method,
+              usage environment, postal code, gender, occupation, age, IP address, cookie information, location
+              information, and unique terminal identification information.<br>
+              <br>
+              3. Our website may obtain information about advertisements clicked before visiting our site from
+              third-party tools for the purpose of measuring advertising effectiveness and compare it with order
+              information.<br>
+              <br>
+              <br>
+              <span>Article 2: Methods of Obtaining Personal Information</span><br>
+              1. In this Service, users may be asked for personal information such as name, date of birth, address,
+              phone number, email address, bank account number, credit card number, or driver's license number at the
+              time of registration. Additionally, transaction records containing personal information and
+              payment-related information between users and partners may be obtained from our business partners
+              (including information providers, advertisers, advertisement distributors, etc.).<br>
+              <br>
+              2. In this Service, we may collect historical and characteristic information such as the services and
+              software used, products purchased, history of viewed pages or advertisements, search keywords, date and
+              time of use, usage method, usage environment (including communication status of the device used and
+              various setting information), IP address, cookie information, location information, and unique terminal
+              identification information when users use our or our partners' services or browse pages.<br>
+              <br>
+              <br>
+              <span>Article 3: Purpose of Acquiring and Using Personal Information</span><br>
+              The purposes for which personal information is acquired and used in this Service are as follows:<br>
+              <br>
+              1. To allow users to view and modify their registration information and usage status, by displaying
+              registered information such as name, address, contact details, payment methods, and information about the
+              services used and products purchased.<br>
+              <br>
+              2. To notify users, send products, and contact users when necessary by using contact information such as
+              name, address, and email address.<br>
+              <br>
+              3. To verify identity using information such as name, date of birth, address, phone number, bank account
+              number, credit card number, driver's license number, and delivery confirmation results.<br>
+              <br>
+              4. To charge product fees using payment-related information such as purchased product names, quantities,
+              types and duration of services used, number of times, billing amount, name, address, bank account number,
+              and credit card number.<br>
+              <br>
+              5. To enable easier data input by displaying registered information on the input screen or transferring
+              information to other services (including those provided by partners) based on user instructions.<br>
+              <br>
+              6. To refuse service to users who violate the terms of use, such as delaying payment or causing damage to
+              third parties, by using information such as usage patterns, name, and address to identify individuals.<br>
+              <br>
+              7. To respond to user inquiries, by using inquiry details, billing-related information, information
+              necessary for service provision, service usage status, and contact details.<br>
+              <br>
+              8. Any purposes incidental to the above purposes.<br>
+              <br>
+              <br>
+              <span>Article 4: Management of Personal Information</span><br>
+              We will maintain accurate and up-to-date personal information and take necessary measures such as
+              maintaining security systems, establishing management structures, and ensuring employee education to
+              prevent unauthorized access, loss, damage, alteration, or leakage of personal information.<br>
+              <br>
+              <br>
+              <span>Article 5: Disclosure of Personal Information</span><br>
+              1. If requested by the user, we will disclose personal information without delay. However, we may not
+              disclose all or part of the information if it falls under any of the following cases:<br>
+              - If it may harm the life, body, property, or other rights and interests of the user or a third party.<br>
+              - If it may significantly hinder the proper execution of our business.<br>
+              - If it violates any laws or regulations.<br>
+              <br>
+              2. Notwithstanding the provisions of the preceding paragraph, history information and characteristic
+              information other than personal information will not, in principle, be disclosed.<br>
+              <br>
+              <br>
+              <span>Article 6: Provision of Personal Information to Third Parties</span><br>
+              1. We will not provide personal information to third parties without prior consent from the user, except
+              in cases permitted by the Personal Information Protection Law and other laws and regulations.<br>
+              <br>
+              <br>
+              <span>Article 7: Security Measures for Personal Information</span><br>
+              This Service implements thorough security measures to ensure the accuracy and safety of personal
+              information.<br>
+              <br>
+              <br>
+              <span>Article 8: Correction and Deletion of Personal Information</span><br>
+              1. Users can request correction or deletion of their personal information if it is incorrect.<br>
+              <br>
+              2. If we deem it necessary to respond to the request, we will correct or delete the personal information
+              and notify the user accordingly.<br>
+              <br>
+              <br>
+              <span>Article 9: Suspension of Use of Personal Information</span><br>
+              If a user requests suspension or deletion of their personal information, we will conduct an investigation
+              and take appropriate measures.<br>
+              <br>
+              <br>
+              <span>Article 10: Compliance with Laws and Regulations & Policy Changes</span><br>
+              1. We comply with applicable Japanese laws and regulations regarding personal information.<br>
+              2. The content of this Privacy Policy may change without prior notice to users.<br>
+              3. Unless otherwise specified, the revised Privacy Policy takes effect from the time it is posted on this
+              website.<br>
+              <br>
+              <br>
+              <span>Article 11: Personal Information Management Supervisor</span><br>
+              and okinawa Inc.<br>
+              <br>
+              <br>
+              <span>Article 12: Contact Information</span><br>
+              For inquiries regarding this Privacy Policy and the handling of personal information, please contact us
+              at:<br>
+              and okinawa Inc.<br>
+              Address: 【Sales Office】 Shibuya SR Building, 1-20-26 Shibuya, Shibuya-ku, Tokyo, 150-0002, Japan<br>
+              TEL: 03-6427-5388<br>
+              E-MAIL: info@habush.jp
+            </p>
           {% else %}
-          <h3>プライバシーポリシー</h3>
-          <p>
-            and okinawa株式会社は、 個人情報保護の重要性に鑑み、<br>
-            本ウェブサイト上で提供するサービス（以下「本サービス」）における個人情報の取扱いについて、プライバシーポリシー（個人情報保護方針）を定めます。<br>
-            個人情報保護の仕組みを構築し、個人情報保護の重要性の認識と取組みを徹底させることにより、個人情報の保護を行ってまいります。<br>
-            <br>
-            <br>
-            <span>第1条 個人情報とは</span><br>
-            1.「個人情報」とは、個人情報保護法にある「個人情報」を指すものとし、生存する個人に関する情報であり、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先、その他の記述等により特定の個人を識別できる情報を指します。<br>
-            <br>
-            2.個人情報のうち「履歴情報および特性情報」とは、上記に定める「個人情報」以外のものをいい、利用頂いたサービスや購入頂いた商品、閲覧したページや広告の履歴、検索キーワード、利用日時、利用方法、利用環境、郵便番号や性別、職業、年齢、IPアドレス、クッキー情報、位置情報、端末の個体識別情報などを指します。<br>
-            <br>
-            3.当サイトでは広告の効果測定のため、第三者の運営するツールから当サイトに訪れる前にクリックされている広告の情報（クリック日や広告掲載サイトなど）を取得し、ご注文の情報と照合する場合がございます。<br>
-            <br>
-            <br>
-            <span>第2条 個人情報の取得方法</span><br>
-            1.本サービスでは、ユーザーが利用登録をする際に氏名、生年月日、住所、電話番号、メールアドレス、銀行口座番号、クレジットカード番号、運転免許証番号などの個人情報をお尋ねすることがあります。また、ユーザーと提携先などとの間でなされた、ユーザーの個人情報を含む取引記録や、決済に関する情報を当社の提携先（情報提供元、広告主、広告配信先などを含む。以下｢提携先｣）などから取得することがあります。<br>
-            <br>
-            2.本サービスでは、ユーザーについて、利用したサービスやソフトウエア、購入した商品、閲覧したページや広告の履歴、検索キーワード、利用日時、利用方法、利用環境（携帯端末を通じてご利用の場合の当該端末の通信状態、利用に際しての各種設定情報なども含む）、IPアドレス、クッキー情報、位置情報、端末の個体識別情報などの履歴情報および特性情報を、当社や提携先のサービスを利用、またはページを閲覧する際に取得いたします。<br>
-            <br>
-            <br>
-            <span>第3条 個人情報を取得・利用する目的</span><br>
-            本サービスにおいて、個人情報を取得・利用する目的は以下のとおりです。<br>
-            <br>
-            1.お客様ご自身の登録情報や利用状況の閲覧・修正を行っていただくために、氏名、住所、連絡先、支払方法などの登録情報、利用されたサービスや購入された商品、およびそれらの代金などに関する情報を表示する目的<br>
-            <br>
-            2.お客様へのお知らせや商品の送付、必要に応じてご連絡を行うため、氏名や住所、メールアドレスなどの連絡先情報を利用する目的<br>
-            <br>
-            3.本人確認を行うために、氏名、生年月日、住所、電話番号、銀行口座番号、クレジットカード番号、運転免許証番号、配達証明付き郵便の到達結果などの情報を利用する目的<br>
-            <br>
-            4.商品代金のご請求のため、購入された商品名や数量、利用されたサービスの種類や期間、回数、ご請求金額、氏名、住所、銀行口座番号やクレジットカード番号などの支払いに関する情報などを利用する目的<br>
-            <br>
-            5.簡便にデータを入力できるようにするため、登録して頂いた情報を入力画面に表示させたり、お客様のご指示に基づいて他のサービスなど（提携先が提供するものも含む）に転送する目的<br>
-            <br>
-            6.代金の支払いを遅滞したり第三者に損害を発生させたりするなど、本サービスの利用規約に違反したお客様や、不正・不当な目的でサービスを利用しようとするお客様のご利用をお断りするために、利用態様、氏名や住所など個人を特定するための情報を利用する目的<br>
-            <br>
-            7.お客様からのお問い合わせに対応するために、お問い合わせ内容や代金の請求に関する情報など、お客様に対してサービスを提供するにあたって必要となる情報や、お客様のサービス利用状況、連絡先情報などを利用する目的<br>
-            <br>
-            8.上記の利用目的に付随する目的<br>
-            <br>
-            <br>
-            <span>第4条 個人情報の管理</span><br>
-            お客様の個人情報を正確かつ最新の状態に保ち、個人情報への不正アクセス・紛失・破損・改ざん・漏洩などを防止するため、セキュリティシステムの維持・管理体制の整備・社員教育の徹底等の必要な措置を講じ、安全対策を実施し、個人情報の厳重な管理を行ないます。<br>
-            <br>
-            <br>
-            <span>第5条 個人情報の開示</span><br>
-            1.お客様ご自身から個人情報の開示を求められた場合、お客様に対してのみ、遅滞なくこれを開示します。ただし、開示することにより次のいずれかに該当する場合は、その全部または一部を開示しない場合もあり、開示しない決定をした場合には、その旨を遅滞なく通知します。<br>
-            <br>
-            お客様ご自身または第三者の生命、身体、財産その他の権利利益を害するおそれがある場合<br>
-            当社の業務の適正な実施に著しい支障を及ぼすおそれがある場合<br>
-            その他法令に違反することとなる場合<br>
-            <br>
-            2.前項の定めにかかわらず、履歴情報および特性情報などの個人情報以外の情報については、原則として開示いたしません。<br>
-            <br>
-            <span>第6条 個人情報の第三者への提供</span><br>
-            1.お客様よりお預かりした個人情報は適切に管理し、次のいずれかに該当する場合を除き、あらかじめお客様の同意を得ることなく、第三者に提供することはありません。ただし、個人情報保護法やその他の法令で認められる場合を除きます。
-            <br>
-            法令に基づく場合<br>
-            人の生命、身体または財産の保護のために必要があり、本人の同意を得ることが困難である場合<br>
-            公衆衛生の向上または児童の健全な育成の推進のために特に必要があり、本人の同意を得ることが困難である場合<br>
-            国の機関もしくは地方公共団体またはその委託を受けた者が、法令の定める事務を遂行することに対して協力する必要があり、本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがある場合<br>
-            あらかじめ、次の事項を告知あるいは公表をしている場合<br>
-            利用目的に第三者への提供を含むこと<br>
-            第三者に提供されるデータの項目<br>
-            第三者への提供の手段または方法<br>
-            本人の求めに応じて個人情報の第三者への提供を停止すること<br>
-            <br>
-            2.前項の定めにかかわらず，次に掲げる場合は第三者には該当しないものとします。<br>
-            <br>
-            本サービスが利用目的の達成に必要な範囲内において、個人情報の全部または一部を委託する場合<br>
-            合併その他の事由による事業の承継に伴って、個人情報が提供される場合<br>
-            個人情報を特定の者との間で共同して利用する場合であって、その旨並びに共同して利用される個人情報の項目、共同して利用する者の範囲、利用する者の利用目的および当該個人情報の管理について責任を有する者の氏名または名称について、あらかじめ本人に通知し、または本人が容易に知り得る状態に置いている場合<br>
-            <br>
-            <br>
-            <span>第7条 個人情報の安全対策</span><br>
-            本サービスでは、個人情報の正確性及び安全性確保のために、セキュリティに万全の対策を講じております。<br>
-            個人情報の保護に関する情報収集を常に行い、最新のセキュリティ対策を行うよう努めます。<br>
-            <br>
-            <br>
-            <span>第8条 個人情報の訂正および削除</span><br>
-            1.お客様は本サービスが保有している自己の個人情報が誤った情報である場合、本サービスが定める手続きにより、個人情報の訂正または削除を請求することができます。<br>
-            <br>
-            2.本サービスは、お客様から前項の請求を受けてその請求に応じる必要があると判断した場合、遅滞なく、当該個人情報の訂正または削除を行い、これをお客様に通知いたします。<br>
-            <br>
-            <br>
-            <span>第9条 個人情報の利用停止等</span><br>
-            お客様より個人情報が利用目的の範囲を超えて取り扱われているという理由、または不正に取得されたものであるという理由により、利用の停止または消去（以下「利用停止等」）を求められた場合には、遅滞なく必要な調査を行い、その結果に基づき、個人情報の利用停止等を行い、その旨をお客様に通知します。ただし、個人情報の利用停止等に多額の費用を有する場合、または利用停止等を行うことが困難な場合は、これに代わるべき措置を講じます。<br>
-            <br>
-            <br>
-            <span>第10条 法令、規範の遵守とプライバシーポリシーの変更</span><br>
-            1.本サービスでは、保有する個人情報に関して適用される日本の法令、その他規範を遵守いたします。<br>
-            <br>
-            2.プライバシーポリシーの内容は、ユーザーに通知することなく、変更することができるものとします。<br>
-            <br>
-            3.本サービスが別途定める場合を除き、変更後のプライバシーポリシーは、本ウェブサイトに掲載した時点で効力が生じるものとします。<br>
-            <br>
-            <br>
-            <span>第11条 個人情報管理責任者</span><br>
-            and okinawa株式会社<br>
-            <br>
-            <br>
-            <span>第12条 お問い合わせ</span><br>
-            本サービスにおけるプライバシーポリシーおよび個人情報の取り扱いに関するお問い合わせは、下記窓口までご連絡ください。<br>
-            and okinawa株式会社<br>
-            住所：【販売所】〒150-0002 東京都渋谷区渋谷1-20-26 渋谷SRビル<br>
-            TEL：03-6427-5388<br>
-            E-MAIL：info@habush.jp
-          </p>
+            <h3>プライバシーポリシー</h3>
+            <p>
+              and okinawa株式会社は、 個人情報保護の重要性に鑑み、<br>
+              本ウェブサイト上で提供するサービス（以下「本サービス」）における個人情報の取扱いについて、プライバシーポリシー（個人情報保護方針）を定めます。<br>
+              個人情報保護の仕組みを構築し、個人情報保護の重要性の認識と取組みを徹底させることにより、個人情報の保護を行ってまいります。<br>
+              <br>
+              <br>
+              <span>第1条 個人情報とは</span><br>
+              1.「個人情報」とは、個人情報保護法にある「個人情報」を指すものとし、生存する個人に関する情報であり、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先、その他の記述等により特定の個人を識別できる情報を指します。<br>
+              <br>
+              2.個人情報のうち「履歴情報および特性情報」とは、上記に定める「個人情報」以外のものをいい、利用頂いたサービスや購入頂いた商品、閲覧したページや広告の履歴、検索キーワード、利用日時、利用方法、利用環境、郵便番号や性別、職業、年齢、IPアドレス、クッキー情報、位置情報、端末の個体識別情報などを指します。<br>
+              <br>
+              3.当サイトでは広告の効果測定のため、第三者の運営するツールから当サイトに訪れる前にクリックされている広告の情報（クリック日や広告掲載サイトなど）を取得し、ご注文の情報と照合する場合がございます。<br>
+              <br>
+              <br>
+              <span>第2条 個人情報の取得方法</span><br>
+              1.本サービスでは、ユーザーが利用登録をする際に氏名、生年月日、住所、電話番号、メールアドレス、銀行口座番号、クレジットカード番号、運転免許証番号などの個人情報をお尋ねすることがあります。また、ユーザーと提携先などとの間でなされた、ユーザーの個人情報を含む取引記録や、決済に関する情報を当社の提携先（情報提供元、広告主、広告配信先などを含む。以下｢提携先｣）などから取得することがあります。<br>
+              <br>
+              2.本サービスでは、ユーザーについて、利用したサービスやソフトウエア、購入した商品、閲覧したページや広告の履歴、検索キーワード、利用日時、利用方法、利用環境（携帯端末を通じてご利用の場合の当該端末の通信状態、利用に際しての各種設定情報なども含む）、IPアドレス、クッキー情報、位置情報、端末の個体識別情報などの履歴情報および特性情報を、当社や提携先のサービスを利用、またはページを閲覧する際に取得いたします。<br>
+              <br>
+              <br>
+              <span>第3条 個人情報を取得・利用する目的</span><br>
+              本サービスにおいて、個人情報を取得・利用する目的は以下のとおりです。<br>
+              <br>
+              1.お客様ご自身の登録情報や利用状況の閲覧・修正を行っていただくために、氏名、住所、連絡先、支払方法などの登録情報、利用されたサービスや購入された商品、およびそれらの代金などに関する情報を表示する目的<br>
+              <br>
+              2.お客様へのお知らせや商品の送付、必要に応じてご連絡を行うため、氏名や住所、メールアドレスなどの連絡先情報を利用する目的<br>
+              <br>
+              3.本人確認を行うために、氏名、生年月日、住所、電話番号、銀行口座番号、クレジットカード番号、運転免許証番号、配達証明付き郵便の到達結果などの情報を利用する目的<br>
+              <br>
+              4.商品代金のご請求のため、購入された商品名や数量、利用されたサービスの種類や期間、回数、ご請求金額、氏名、住所、銀行口座番号やクレジットカード番号などの支払いに関する情報などを利用する目的<br>
+              <br>
+              5.簡便にデータを入力できるようにするため、登録して頂いた情報を入力画面に表示させたり、お客様のご指示に基づいて他のサービスなど（提携先が提供するものも含む）に転送する目的<br>
+              <br>
+              6.代金の支払いを遅滞したり第三者に損害を発生させたりするなど、本サービスの利用規約に違反したお客様や、不正・不当な目的でサービスを利用しようとするお客様のご利用をお断りするために、利用態様、氏名や住所など個人を特定するための情報を利用する目的<br>
+              <br>
+              7.お客様からのお問い合わせに対応するために、お問い合わせ内容や代金の請求に関する情報など、お客様に対してサービスを提供するにあたって必要となる情報や、お客様のサービス利用状況、連絡先情報などを利用する目的<br>
+              <br>
+              8.上記の利用目的に付随する目的<br>
+              <br>
+              <br>
+              <span>第4条 個人情報の管理</span><br>
+              お客様の個人情報を正確かつ最新の状態に保ち、個人情報への不正アクセス・紛失・破損・改ざん・漏洩などを防止するため、セキュリティシステムの維持・管理体制の整備・社員教育の徹底等の必要な措置を講じ、安全対策を実施し、個人情報の厳重な管理を行ないます。<br>
+              <br>
+              <br>
+              <span>第5条 個人情報の開示</span><br>
+              1.お客様ご自身から個人情報の開示を求められた場合、お客様に対してのみ、遅滞なくこれを開示します。ただし、開示することにより次のいずれかに該当する場合は、その全部または一部を開示しない場合もあり、開示しない決定をした場合には、その旨を遅滞なく通知します。<br>
+              <br>
+              お客様ご自身または第三者の生命、身体、財産その他の権利利益を害するおそれがある場合<br>
+              当社の業務の適正な実施に著しい支障を及ぼすおそれがある場合<br>
+              その他法令に違反することとなる場合<br>
+              <br>
+              2.前項の定めにかかわらず、履歴情報および特性情報などの個人情報以外の情報については、原則として開示いたしません。<br>
+              <br>
+              <span>第6条 個人情報の第三者への提供</span><br>
+              1.お客様よりお預かりした個人情報は適切に管理し、次のいずれかに該当する場合を除き、あらかじめお客様の同意を得ることなく、第三者に提供することはありません。ただし、個人情報保護法やその他の法令で認められる場合を除きます。
+              <br>
+              法令に基づく場合<br>
+              人の生命、身体または財産の保護のために必要があり、本人の同意を得ることが困難である場合<br>
+              公衆衛生の向上または児童の健全な育成の推進のために特に必要があり、本人の同意を得ることが困難である場合<br>
+              国の機関もしくは地方公共団体またはその委託を受けた者が、法令の定める事務を遂行することに対して協力する必要があり、本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがある場合<br>
+              あらかじめ、次の事項を告知あるいは公表をしている場合<br>
+              利用目的に第三者への提供を含むこと<br>
+              第三者に提供されるデータの項目<br>
+              第三者への提供の手段または方法<br>
+              本人の求めに応じて個人情報の第三者への提供を停止すること<br>
+              <br>
+              2.前項の定めにかかわらず，次に掲げる場合は第三者には該当しないものとします。<br>
+              <br>
+              本サービスが利用目的の達成に必要な範囲内において、個人情報の全部または一部を委託する場合<br>
+              合併その他の事由による事業の承継に伴って、個人情報が提供される場合<br>
+              個人情報を特定の者との間で共同して利用する場合であって、その旨並びに共同して利用される個人情報の項目、共同して利用する者の範囲、利用する者の利用目的および当該個人情報の管理について責任を有する者の氏名または名称について、あらかじめ本人に通知し、または本人が容易に知り得る状態に置いている場合<br>
+              <br>
+              <br>
+              <span>第7条 個人情報の安全対策</span><br>
+              本サービスでは、個人情報の正確性及び安全性確保のために、セキュリティに万全の対策を講じております。<br>
+              個人情報の保護に関する情報収集を常に行い、最新のセキュリティ対策を行うよう努めます。<br>
+              <br>
+              <br>
+              <span>第8条 個人情報の訂正および削除</span><br>
+              1.お客様は本サービスが保有している自己の個人情報が誤った情報である場合、本サービスが定める手続きにより、個人情報の訂正または削除を請求することができます。<br>
+              <br>
+              2.本サービスは、お客様から前項の請求を受けてその請求に応じる必要があると判断した場合、遅滞なく、当該個人情報の訂正または削除を行い、これをお客様に通知いたします。<br>
+              <br>
+              <br>
+              <span>第9条 個人情報の利用停止等</span><br>
+              お客様より個人情報が利用目的の範囲を超えて取り扱われているという理由、または不正に取得されたものであるという理由により、利用の停止または消去（以下「利用停止等」）を求められた場合には、遅滞なく必要な調査を行い、その結果に基づき、個人情報の利用停止等を行い、その旨をお客様に通知します。ただし、個人情報の利用停止等に多額の費用を有する場合、または利用停止等を行うことが困難な場合は、これに代わるべき措置を講じます。<br>
+              <br>
+              <br>
+              <span>第10条 法令、規範の遵守とプライバシーポリシーの変更</span><br>
+              1.本サービスでは、保有する個人情報に関して適用される日本の法令、その他規範を遵守いたします。<br>
+              <br>
+              2.プライバシーポリシーの内容は、ユーザーに通知することなく、変更することができるものとします。<br>
+              <br>
+              3.本サービスが別途定める場合を除き、変更後のプライバシーポリシーは、本ウェブサイトに掲載した時点で効力が生じるものとします。<br>
+              <br>
+              <br>
+              <span>第11条 個人情報管理責任者</span><br>
+              and okinawa株式会社<br>
+              <br>
+              <br>
+              <span>第12条 お問い合わせ</span><br>
+              本サービスにおけるプライバシーポリシーおよび個人情報の取り扱いに関するお問い合わせは、下記窓口までご連絡ください。<br>
+              and okinawa株式会社<br>
+              住所：【販売所】〒150-0002 東京都渋谷区渋谷1-20-26 渋谷SRビル<br>
+              TEL：03-6427-5388<br>
+              E-MAIL：info@habush.jp
+            </p>
           {% endif %}
         </div>
       </div>
@@ -705,8 +789,8 @@ window.addEventListener("load", function () {
         <span class="crossーclose"></span>
         <div class="c-modal_content_inner">
           {% if request.path contains '/en' %}
-          <h3>Legal Notice Based on the Act on Specified Commercial Transactions</h3>
-          <p>
+            <h3>Legal Notice Based on the Act on Specified Commercial Transactions</h3>
+            <p>
               1. Business Name<br>
               and okinawa Inc.<br>
               <br>
@@ -741,23 +825,29 @@ window.addEventListener("load", function () {
               Credit card payment (VISA, MASTER, AMEX, JCB)<br>
               <br>
               11. Payment Timing<br>
-              Credit card payments: Payment is made in one lump sum. Closing and withdrawal dates vary by credit card company.<br>
+              Credit card payments: Payment is made in one lump sum. Closing and withdrawal dates vary by credit card
+              company.<br>
               <br>
               12. Delivery Time<br>
               Products will be delivered within 14 days after order confirmation or payment confirmation.<br>
               If a product requires longer delivery time than usual, it will be notified on the website or via email.<br>
-              Delays may occur due to bad weather, traffic restrictions, logistics issues, or other unforeseen circumstances. In such cases, updates will be provided on the website or via email.<br>
+              Delays may occur due to bad weather, traffic restrictions, logistics issues, or other unforeseen
+              circumstances. In such cases, updates will be provided on the website or via email.<br>
               <br>
               13. Refund & Cancellation Policy<br>
-              Returns and exchanges are accepted only for defective, damaged, or incorrectly delivered products or services.<br>
+              Returns and exchanges are accepted only for defective, damaged, or incorrectly delivered products or
+              services.<br>
               Returns or cancellations due to customer reasons are not accepted.<br>
-              If the product is defective or incorrect, it will be exchanged with a new one (or refunded if no stock is available). Please return the defective product.<br>
+              If the product is defective or incorrect, it will be exchanged with a new one (or refunded if no stock is
+              available). Please return the defective product.<br>
               <br>
               Return Period: Within 7 days from the date of product arrival.<br>
               Return Shipping Cost: The cost for defective or incorrect product exchanges will be covered by us.<br>
               <br>
               14. Other Notices<br>
-              This website may include links to third-party websites. We are not responsible for the policies or data collected by these third-party sites. When browsing linked sites, please refer to their respective privacy policies.<br>
+              This website may include links to third-party websites. We are not responsible for the policies or data
+              collected by these third-party sites. When browsing linked sites, please refer to their respective privacy
+              policies.<br>
               <br>
               15. Liquor Sales License Information<br>
               License No.: Shibu Law No. 566<br>
@@ -779,85 +869,84 @@ window.addEventListener("load", function () {
               <br>
               Training Organization<br>
               Japan Voluntary Chain Association (General Incorporated Association)<br>
-          </p>
+            </p>
           {% else %}
-          <h3>特定商取引法に基づく表記</h3>
-          <p>
-            1 事業者の名称<br>
-            and okinawa株式会社<br>
-            <br>
-            2 サービス名<br>
-            HABUSH<br>
-            <br>
-            3 代表者の氏名<br>
-            月岡 弘一<br>
-            <br>
-            4 住所<br>
-            【販売所】〒150-0002 東京都渋谷区渋谷1-20-26 渋谷SRビル<br>
-            【営業所】〒150-0001 東京都渋谷区神宮前5-29-9 めぐみハイマンション801<br>
-            <br>
-            5 電話番号<br>
-            03-6427-5388<br>
-            <br>
-            6 メールアドレス<br>
-            info@habush.jp<br>
-            <br>
-            7 ホームページアドレス<br>
-            https://habush.jp<br>
-            <br>
-            8 商品の代金<br>
-            各商品の購入ページにて表示する金額<br>
-            <br>
-            9 商品の代金以外に必要となる費用<br>
-            配送手数料: ¥1,000<br>
-            ※北海道、沖縄及び一部離島は¥1,700<br>
-            ※通常商品を税込52,800円以上お買い上げのお客さまには全国送料無料でお届けします。<br>
-            <br>
-            10 支払方法<br>
-            クレジットカード決済(VISA、MASTER、AMEX、JCB)<br>
-            <br>
-            11 代金の支払時期<br>
-            クレジットカード決済:お支払いは一括払となります。クレジットカード会社により締日および引落日が異なります。<br>
-            <br>
-            12 商品の引渡時期<br>
-            ご注文確定またはご入金確認後、14日以内にお届けいたします。<br>
-            通常よりも配送までの時間がかかる商品についてはサイト上またはメール等でお知らせいたします。また、悪天候、交通規制、配送業者等の都合やその他何らかの理由により商品の引渡時期が遅延する場合がございます。その場合は、サイト上またはメール等でお知らせいたします。<br>
-            <br>
-            13 返金・キャンセルに関する特約<br>
-            商品またはサービスに初期的な不具合、破損等の不良品または誤品配送があった場合に限り、返品・交換に応じさせていただきます。<br>
-            お客様都合での返品、注文確定後のキャンセル等はお受けできませんのでご了承ください。<br>
-            万が一、商品に破損等の不良品または誤品配送があった場合には、良品と交換(同一商品の在庫がない場合には返金)させていたしますので、当該商品をご返品ください。<br>
-            <br>
-            返品期限:商品の到着日より7日以内とさせて頂きます。<br>
-            返品送料:不良品交換、誤品配送交換は当社負担とさせていただきます。<br>
-            <br>
-            14 その他注意事項<br>
-            当サイト上に第三者の運営するウェブサイトへのリンクを設置する場合があります。リンク先を通じてアクセスできる、第三者が運営するサイトおよびサービス等においては、当サイトの責任範囲外となり、それらで独自に収集される個人情報の利用については、当社は、関知いたしません。リンク先を閲覧される際は、その第三者が設定するプライバシーポリシーに準じることとなります。<br>
-            <br>
-            15 酒類販売業免許について<br>
-            渋 法 第 566 号<br>
-            酒類販売業免許<br>
-            令和4年8月23日<br>
-            <br>
-            16 酒類販売管理者標識の掲示<br>
-            販売場の名称および所在地<br>
-            and okinawa株式会社<br>
-            【販売所】〒150-0002 東京都渋谷区渋谷1-20-26 渋谷SRビル<br>
-            酒類販売管理者の氏名<br>
-            石田 理彩子<br>
-            酒類販売管理研修受講年月日<br>
-            令和7年3月26日<br>
-            次回研修の受講期限<br>
-            令和10年3月1日<br>
-            研修実施団体名<br>
-            一般社団法人日本ボランタリーチェーン協会
-          </p>
+            <h3>特定商取引法に基づく表記</h3>
+            <p>
+              1 事業者の名称<br>
+              and okinawa株式会社<br>
+              <br>
+              2 サービス名<br>
+              HABUSH<br>
+              <br>
+              3 代表者の氏名<br>
+              月岡 弘一<br>
+              <br>
+              4 住所<br>
+              【販売所】〒150-0002 東京都渋谷区渋谷1-20-26 渋谷SRビル<br>
+              【営業所】〒150-0001 東京都渋谷区神宮前5-29-9 めぐみハイマンション801<br>
+              <br>
+              5 電話番号<br>
+              03-6427-5388<br>
+              <br>
+              6 メールアドレス<br>
+              info@habush.jp<br>
+              <br>
+              7 ホームページアドレス<br>
+              https://habush.jp<br>
+              <br>
+              8 商品の代金<br>
+              各商品の購入ページにて表示する金額<br>
+              <br>
+              9 商品の代金以外に必要となる費用<br>
+              配送手数料: ¥1,000<br>
+              ※北海道、沖縄及び一部離島は¥1,700<br>
+              ※通常商品を税込52,800円以上お買い上げのお客さまには全国送料無料でお届けします。<br>
+              <br>
+              10 支払方法<br>
+              クレジットカード決済(VISA、MASTER、AMEX、JCB)<br>
+              <br>
+              11 代金の支払時期<br>
+              クレジットカード決済:お支払いは一括払となります。クレジットカード会社により締日および引落日が異なります。<br>
+              <br>
+              12 商品の引渡時期<br>
+              ご注文確定またはご入金確認後、14日以内にお届けいたします。<br>
+              通常よりも配送までの時間がかかる商品についてはサイト上またはメール等でお知らせいたします。また、悪天候、交通規制、配送業者等の都合やその他何らかの理由により商品の引渡時期が遅延する場合がございます。その場合は、サイト上またはメール等でお知らせいたします。<br>
+              <br>
+              13 返金・キャンセルに関する特約<br>
+              商品またはサービスに初期的な不具合、破損等の不良品または誤品配送があった場合に限り、返品・交換に応じさせていただきます。<br>
+              お客様都合での返品、注文確定後のキャンセル等はお受けできませんのでご了承ください。<br>
+              万が一、商品に破損等の不良品または誤品配送があった場合には、良品と交換(同一商品の在庫がない場合には返金)させていたしますので、当該商品をご返品ください。<br>
+              <br>
+              返品期限:商品の到着日より7日以内とさせて頂きます。<br>
+              返品送料:不良品交換、誤品配送交換は当社負担とさせていただきます。<br>
+              <br>
+              14 その他注意事項<br>
+              当サイト上に第三者の運営するウェブサイトへのリンクを設置する場合があります。リンク先を通じてアクセスできる、第三者が運営するサイトおよびサービス等においては、当サイトの責任範囲外となり、それらで独自に収集される個人情報の利用については、当社は、関知いたしません。リンク先を閲覧される際は、その第三者が設定するプライバシーポリシーに準じることとなります。<br>
+              <br>
+              15 酒類販売業免許について<br>
+              渋 法 第 566 号<br>
+              酒類販売業免許<br>
+              令和4年8月23日<br>
+              <br>
+              16 酒類販売管理者標識の掲示<br>
+              販売場の名称および所在地<br>
+              and okinawa株式会社<br>
+              【販売所】〒150-0002 東京都渋谷区渋谷1-20-26 渋谷SRビル<br>
+              酒類販売管理者の氏名<br>
+              石田 理彩子<br>
+              酒類販売管理研修受講年月日<br>
+              令和7年3月26日<br>
+              次回研修の受講期限<br>
+              令和10年3月1日<br>
+              研修実施団体名<br>
+              一般社団法人日本ボランタリーチェーン協会
+            </p>
           {% endif %}
         </div>
       </div>
     </div>
     <!-- /modal-02 -->
-    
 
     <!-- modal-03 -->
     <div id="modal-03" class="c-modal c-close-active js-modal">
@@ -865,53 +954,53 @@ window.addEventListener("load", function () {
       <div class="js-can-scroll c-modal_content _lg">
         <span class="crossーclose"></span>
         {% if request.path contains '/en' %}
-        <div class="c-modal_content_inner">
-          <img src="{{ 'mark.png' | file_url }}" alt="" class="mark">
-          <h3>Are you 21 years old or older?</h3>
-          <ul class="d-flex justify-content-center">
-            <li class="yes_btn">
-              <!-- <a href="https://awichmerch.thebase.in/items/69187993" class="en"> -->
-              <a href="/en/cart/add?id=47170814214439&quantity=1" class="en">
-                <picture class="">
-                  <source srcset="{{ 'yes_btn.svg' | file_url }}" media="(min-width: 768px)">
-                  <img src="{{ 'yes_btn_sp.svg' | file_url }}" alt="Yes">
-                </picture>
-              </a>
-            </li>
-            <li class="no_btn en">
-              <a href="https://google.com" class="en">
-                <picture class="">
-                  <source srcset="{{ 'no_btn.svg' | file_url }}" media="(min-width: 768px)">
-                  <img src="{{ 'no_btn_sp.svg' | file_url }}" alt="No">
-                </picture>
-              </a>
-            </li>
-          </ul>
-        </div>
+          <div class="c-modal_content_inner">
+            <img src="{{ 'mark.png' | file_url }}" alt="" class="mark">
+            <h3>Are you 21 years old or older?</h3>
+            <ul class="d-flex justify-content-center">
+              <li class="yes_btn">
+                <!-- <a href="https://awichmerch.thebase.in/items/69187993" class="en"> -->
+                <a href="/en/cart/add?id=47170814214439&quantity=1" class="en">
+                  <picture class="">
+                    <source srcset="{{ 'yes_btn.svg' | file_url }}" media="(min-width: 768px)">
+                    <img src="{{ 'yes_btn_sp.svg' | file_url }}" alt="Yes">
+                  </picture>
+                </a>
+              </li>
+              <li class="no_btn en">
+                <a href="https://google.com" class="en">
+                  <picture class="">
+                    <source srcset="{{ 'no_btn.svg' | file_url }}" media="(min-width: 768px)">
+                    <img src="{{ 'no_btn_sp.svg' | file_url }}" alt="No">
+                  </picture>
+                </a>
+              </li>
+            </ul>
+          </div>
         {% else %}
-        <div class="c-modal_content_inner">
-          <img src="{{ 'mark.png' | file_url }}" alt="" class="mark">
-          <h3>あなたは、20歳以上ですか？</h3>
-          <ul class="d-flex justify-content-center">
-            <li class="yes_btn">
-              <!-- <a href="https://awichmerch.thebase.in/items/69187993" class="en"> -->
-              <a href="/cart/add?id=47170814214439&quantity=1" class="en">
-                <picture class="">
-                  <source srcset="{{ 'yes_btn.svg' | file_url }}" media="(min-width: 768px)">
-                  <img src="{{ 'yes_btn_sp.svg' | file_url }}" alt="Yes">
-                </picture>
-              </a>
-            </li>
-            <li class="no_btn en">
-              <a href="https://google.com" class="en">
-                <picture class="">
-                  <source srcset="{{ 'no_btn.svg' | file_url }}" media="(min-width: 768px)">
-                  <img src="{{ 'no_btn_sp.svg' | file_url }}" alt="No">
-                </picture>
-              </a>
-            </li>
-          </ul>
-        </div>
+          <div class="c-modal_content_inner">
+            <img src="{{ 'mark.png' | file_url }}" alt="" class="mark">
+            <h3>あなたは、20歳以上ですか？</h3>
+            <ul class="d-flex justify-content-center">
+              <li class="yes_btn">
+                <!-- <a href="https://awichmerch.thebase.in/items/69187993" class="en"> -->
+                <a href="/cart/add?id=47170814214439&quantity=1" class="en">
+                  <picture class="">
+                    <source srcset="{{ 'yes_btn.svg' | file_url }}" media="(min-width: 768px)">
+                    <img src="{{ 'yes_btn_sp.svg' | file_url }}" alt="Yes">
+                  </picture>
+                </a>
+              </li>
+              <li class="no_btn en">
+                <a href="https://google.com" class="en">
+                  <picture class="">
+                    <source srcset="{{ 'no_btn.svg' | file_url }}" media="(min-width: 768px)">
+                    <img src="{{ 'no_btn_sp.svg' | file_url }}" alt="No">
+                  </picture>
+                </a>
+              </li>
+            </ul>
+          </div>
         {% endif %}
       </div>
     </div>
@@ -981,32 +1070,32 @@ window.addEventListener("load", function () {
     <!-- /modal-05 -->
 
     {% if template == 'page.recipe' %}
-    <ul class="underRecipe__swiper-thumb-wrap">
-      <li class="underRecipe__swiper-thumb is-active" data-slide="0">
-        <img src="{{ 'recipe-thum1.png' | file_url }}" alt="ブラックコーヒーの画像" width="95" height="95">
-      </li>
-      <li class="underRecipe__swiper-thumb" data-slide="1">
-        <img src="{{ 'recipe-thum2.png' | file_url }}" alt="ブラックコーヒーの画像" width="95" height="95">
-      </li>
-      <li class="underRecipe__swiper-thumb" data-slide="2">
-        <img src="{{ 'recipe-thum3.png' | file_url }}" alt="トニックウォーターの画像" width="95" height="95">
-      </li>
-      <li class="underRecipe__swiper-thumb" data-slide="3">
-        <img src="{{ 'recipe-thum4.png' | file_url }}" alt="エナジードリンクの画像" width="95" height="95">
-      </li>
-      <li class="underRecipe__swiper-thumb" data-slide="4">
-        <img src="{{ 'recipe-thum5.png' | file_url }}" alt="さんぴん茶の画像" width="95" height="95">
-      </li>
-      <li class="underRecipe__swiper-thumb" data-slide="5">
-        <img src="{{ 'recipe-thum6.png' | file_url }}" alt="牛乳の画像" width="95" height="95">
-      </li>
-      <li class="underRecipe__swiper-thumb" data-slide="6">
-        <img src="{{ 'recipe-thum7.png' | file_url }}" alt="飲むヨーグルトの画像" width="95" height="95">
-      </li>
-      <li class="underRecipe__swiper-thumb" data-slide="7">
-        <img src="{{ 'recipe-thum8.png' | file_url }}" alt="グレープフルーツの画像" width="95" height="95">
-      </li>
-    </ul>
+      <ul class="underRecipe__swiper-thumb-wrap">
+        <li class="underRecipe__swiper-thumb is-active" data-slide="0">
+          <img src="{{ 'recipe-thum1.png' | file_url }}" alt="ブラックコーヒーの画像" width="95" height="95">
+        </li>
+        <li class="underRecipe__swiper-thumb" data-slide="1">
+          <img src="{{ 'recipe-thum2.png' | file_url }}" alt="ブラックコーヒーの画像" width="95" height="95">
+        </li>
+        <li class="underRecipe__swiper-thumb" data-slide="2">
+          <img src="{{ 'recipe-thum3.png' | file_url }}" alt="トニックウォーターの画像" width="95" height="95">
+        </li>
+        <li class="underRecipe__swiper-thumb" data-slide="3">
+          <img src="{{ 'recipe-thum4.png' | file_url }}" alt="エナジードリンクの画像" width="95" height="95">
+        </li>
+        <li class="underRecipe__swiper-thumb" data-slide="4">
+          <img src="{{ 'recipe-thum5.png' | file_url }}" alt="さんぴん茶の画像" width="95" height="95">
+        </li>
+        <li class="underRecipe__swiper-thumb" data-slide="5">
+          <img src="{{ 'recipe-thum6.png' | file_url }}" alt="牛乳の画像" width="95" height="95">
+        </li>
+        <li class="underRecipe__swiper-thumb" data-slide="6">
+          <img src="{{ 'recipe-thum7.png' | file_url }}" alt="飲むヨーグルトの画像" width="95" height="95">
+        </li>
+        <li class="underRecipe__swiper-thumb" data-slide="7">
+          <img src="{{ 'recipe-thum8.png' | file_url }}" alt="グレープフルーツの画像" width="95" height="95">
+        </li>
+      </ul>
     {% endif %}
     {% if template == 'index' %}
       <div id="js-mouse__topProcess">VIEW</div>
@@ -1015,137 +1104,139 @@ window.addEventListener("load", function () {
     {% if template == 'collection' %}
       <div id="js-mouse__collectionProducts">INFO</div>
     {% endif %}
-  
-    <a class="follow_btn {% if request.path contains '/en' %} --en{% endif %}" href="{% if request.path contains '/en' %}/en/cart/add?id=47170814214439&quantity=1{% else %}/cart/add?id=47170814214439&quantity=1{% endif %}"></a>
 
+    <a
+      class="follow_btn {% if request.path contains '/en' %} --en{% endif %}"
+      href="{% if request.path contains '/en' %}/en/cart/add?id=47170814214439&quantity=1{% else %}/cart/add?id=47170814214439&quantity=1{% endif %}"
+    ></a>
 
     <!-- start-modal -->
-    　<style>
+
+    <style>
       .c-modal-start.js-show {
         display: block;
       }
       #start-modal .c-modal_bg {
-         background: #272727;
+        background: #272727;
         opacity: 0.95;
-       }
+      }
       #start-modal .mark {
-          width: 28px;
-          display: block;
-          margin: 0 auto 20px
+        width: 28px;
+        display: block;
+        margin: 0 auto 20px;
       }
       #start-modal h3 {
-          font-size: 1.6rem;
-          margin-bottom: 60px;
-          text-align: center
+        font-size: 1.6rem;
+        margin-bottom: 60px;
+        text-align: center;
       }
       #start-modal ul {
-          gap: 20px 40px
+        gap: 20px 40px;
       }
       #start-modal .yes_btn:hover {
         cursor: pointer;
         opacity: 0.7;
       }
-       html.no-scroll {
-         overflow: hidden;
-       }
+      html.no-scroll {
+        overflow: hidden;
+      }
     </style>
     <div id="start-modal" class="c-modal c-modal-start js-modal">
       <div class="c-modal_bg js-modal-close"></div>
       <div class="js-can-scroll c-modal_content _lg">
         <!-- <span class="crossーclose"></span> -->
         {% if request.path contains '/en' %}
-        <div class="c-modal_content_inner">
-          <img src="{{ 'mark.png' | file_url }}" alt="" class="mark">
-          <h3>Are you 21 years old or older?</h3>
-          <ul class="d-flex justify-content-center">
-            <li class="yes_btn">
-              <!-- <a href="https://awichmerch.thebase.in/items/69187993" class="en"> -->
-              <a class="en">
-                <picture class="">
-                  <source srcset="{{ 'yes_btn.svg' | file_url }}" media="(min-width: 768px)">
-                  <img src="{{ 'yes_btn_sp.svg' | file_url }}" alt="Yes">
-                </picture>
-              </a>
-            </li>
-            <li class="no_btn en">
-              <a href="https://google.com" class="en">
-                <picture class="">
-                  <source srcset="{{ 'no_btn.svg' | file_url }}" media="(min-width: 768px)">
-                  <img src="{{ 'no_btn_sp.svg' | file_url }}" alt="No">
-                </picture>
-              </a>
-            </li>
-          </ul>
-        </div>
+          <div class="c-modal_content_inner">
+            <img src="{{ 'mark.png' | file_url }}" alt="" class="mark">
+            <h3>Are you 21 years old or older?</h3>
+            <ul class="d-flex justify-content-center">
+              <li class="yes_btn">
+                <!-- <a href="https://awichmerch.thebase.in/items/69187993" class="en"> -->
+                <a class="en">
+                  <picture class="">
+                    <source srcset="{{ 'yes_btn.svg' | file_url }}" media="(min-width: 768px)">
+                    <img src="{{ 'yes_btn_sp.svg' | file_url }}" alt="Yes">
+                  </picture>
+                </a>
+              </li>
+              <li class="no_btn en">
+                <a href="https://google.com" class="en">
+                  <picture class="">
+                    <source srcset="{{ 'no_btn.svg' | file_url }}" media="(min-width: 768px)">
+                    <img src="{{ 'no_btn_sp.svg' | file_url }}" alt="No">
+                  </picture>
+                </a>
+              </li>
+            </ul>
+          </div>
         {% else %}
-        <div class="c-modal_content_inner">
-          <img src="{{ 'mark.png' | file_url }}" alt="" class="mark">
-          <h3>あなたは、20歳以上ですか？</h3>
-          <ul class="d-flex justify-content-center">
-            <li class="yes_btn">
-              <!-- <a href="https://awichmerch.thebase.in/items/69187993" class="en"> -->
-              <a class="en">
-                <picture class="">
-                  <source srcset="{{ 'yes_btn.svg' | file_url }}" media="(min-width: 768px)">
-                  <img src="{{ 'yes_btn_sp.svg' | file_url }}" alt="Yes">
-                </picture>
-              </a>
-            </li>
-            <li class="no_btn en">
-              <a href="https://google.com" class="en">
-                <picture class="">
-                  <source srcset="{{ 'no_btn.svg' | file_url }}" media="(min-width: 768px)">
-                  <img src="{{ 'no_btn_sp.svg' | file_url }}" alt="No">
-                </picture>
-              </a>
-            </li>
-          </ul>
-        </div>
+          <div class="c-modal_content_inner">
+            <img src="{{ 'mark.png' | file_url }}" alt="" class="mark">
+            <h3>あなたは、20歳以上ですか？</h3>
+            <ul class="d-flex justify-content-center">
+              <li class="yes_btn">
+                <!-- <a href="https://awichmerch.thebase.in/items/69187993" class="en"> -->
+                <a class="en">
+                  <picture class="">
+                    <source srcset="{{ 'yes_btn.svg' | file_url }}" media="(min-width: 768px)">
+                    <img src="{{ 'yes_btn_sp.svg' | file_url }}" alt="Yes">
+                  </picture>
+                </a>
+              </li>
+              <li class="no_btn en">
+                <a href="https://google.com" class="en">
+                  <picture class="">
+                    <source srcset="{{ 'no_btn.svg' | file_url }}" media="(min-width: 768px)">
+                    <img src="{{ 'no_btn_sp.svg' | file_url }}" alt="No">
+                  </picture>
+                </a>
+              </li>
+            </ul>
+          </div>
         {% endif %}
       </div>
     </div>
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          // クッキーを取得する関数
-          function getCookie(name) {
-              let match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
-              return match ? match[2] : null;
+      document.addEventListener('DOMContentLoaded', function () {
+        // クッキーを取得する関数
+        function getCookie(name) {
+          let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+          return match ? match[2] : null;
+        }
+
+        // クッキーを設定する関数（有効期限を30日とする）
+        function setCookie(name, value, days) {
+          let expires = '';
+          if (days) {
+            let date = new Date();
+            date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+            expires = '; expires=' + date.toUTCString();
           }
-      
-          // クッキーを設定する関数（有効期限を30日とする）
-          function setCookie(name, value, days) {
-              let expires = "";
-              if (days) {
-                  let date = new Date();
-                  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                  expires = "; expires=" + date.toUTCString();
-              }
-              document.cookie = name + "=" + value + "; path=/" + expires;
+          document.cookie = name + '=' + value + '; path=/' + expires;
+        }
+
+        // クッキーの値を確認して #start-modal を非表示にする
+        if (getCookie('ageConfirmed') === 'true') {
+          document.getElementById('start-modal').style.display = 'none';
+          document.documentElement.style.overflow = 'visible';
+        } else {
+          const modal = document.querySelector('.c-modal-start');
+          if (modal) {
+            modal.classList.add('js-show');
           }
-      
-          // クッキーの値を確認して #start-modal を非表示にする
-          if (getCookie("ageConfirmed") === "true") {
-              document.getElementById("start-modal").style.display = "none";
-              document.documentElement.style.overflow = "visible";
-          } else {
-            const modal = document.querySelector(".c-modal-start");
-            if (modal) {
-              modal.classList.add("js-show");
-            }
-            document.documentElement.style.overflow = "hidden";
-          }
-        
-          // .yes_btn をクリックしたらクッキーを設定し、#start-modal を非表示にする
-          document.querySelector("#start-modal .yes_btn").addEventListener("click", function() {
-              setCookie("ageConfirmed", "true", 30); // クッキーを30日間保存
-              document.getElementById("start-modal").style.display = "none";
-            document.documentElement.style.overflow = "visible";
-          });
+          document.documentElement.style.overflow = 'hidden';
+        }
+
+        // .yes_btn をクリックしたらクッキーを設定し、#start-modal を非表示にする
+        document.querySelector('#start-modal .yes_btn').addEventListener('click', function () {
+          setCookie('ageConfirmed', 'true', 30); // クッキーを30日間保存
+          document.getElementById('start-modal').style.display = 'none';
+          document.documentElement.style.overflow = 'visible';
+        });
       });
     </script>
-    
+
     <!-- /start-modal -->
-    
 
     <script>
       window.shopUrl = '{{ request.origin }}';
@@ -1191,7 +1282,7 @@ window.addEventListener("load", function () {
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    
+
     <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'wow.js' | asset_url }}" defer="defer"></script>
@@ -1199,22 +1290,19 @@ window.addEventListener("load", function () {
     <script src="{{ 'rellax.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'main.js' | asset_url }}" defer="defer"></script>
     <script>
-      if (
-        window.location.pathname === '/collections/all' ||
-        window.location.pathname === '/en/collections/all'
-      ) {
+      if (window.location.pathname === '/collections/all' || window.location.pathname === '/en/collections/all') {
         window.location.href = window.location.pathname.replace('/collections/all', '/collections/products');
       }
     </script>
-    <!-- <script>
-      window.addEventListener("load", function() {
-        setTimeout(() => {
-          const transcySwitcherContainer = document.querySelector('#transcySwitcherContainer');
-          transcySwitcherContainer.classList.add('js-show');    
-        }, 1000);
-      });
-    </script> -->
-
+    <!--
+      <script>
+        window.addEventListener("load", function() {
+          setTimeout(() => {
+            const transcySwitcherContainer = document.querySelector('#transcySwitcherContainer');
+            transcySwitcherContainer.classList.add('js-show');
+          }, 1000);
+        });
+      </script>
+    -->
   </body>
 </html>
-
