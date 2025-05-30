@@ -1,13 +1,14 @@
 .rte {
   width: 90%;
-  max-width: 846px;
+  max-width: 681px;
   height: auto;
-  padding: 75px 0 70px;
   margin: 0 auto;
 }
 p {
-  font-size: 16px;
   line-height: 1.75;
+}
+td {
+  border: none !important;
 }
 @media screen and (max-width: 768px) {
   .rte {
